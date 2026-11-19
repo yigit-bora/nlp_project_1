@@ -72,9 +72,6 @@ Local open-source LLM evaluation project implemented in Python using **Ollama** 
 │       ├── ortak_grafikler/         # Multi-model Entity F1 & Prompt-vs-Schema comparison PNGs
 │       ├── <model_slug>/{prompt_only,schema_constrained}/ # 5 charts per model per setting
 │       └── _legacy_70samples/       # Archived charts from the early 70-sample run
-│
-├── sunum_notlari.md                 # Oral defense & video Q&A notes (Section A + B1, C1, D4, E1, F2, G2 + ABSA)
-└── unutulmamasi_gerekenler.md       # Project checklist tracking completed experiments and deliverables
 ```
 
 ---
