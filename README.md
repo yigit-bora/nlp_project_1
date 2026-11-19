@@ -67,8 +67,7 @@ Local open-source LLM evaluation project implemented in Python using **Ollama** 
 ├── reports/
 │   ├── NLP_Project_1_Report.pdf     # Final 4-page technical report (methodology, results, discussion)
 │   ├── benchmark_report.md          # Detailed Markdown summary report with links to all per-model tables
-│   ├── slaytlar.html                # Interactive HTML presentation slides (12 slides, full results & insights)
-│   ├── slaytlar.pdf                 # Exported 12-page 16:9 PDF version of the presentation slides
+│   ├── slaytlar.pdf                 # Exported 12-page 16:9 PDF presentation slides (full results & insights)
 │   └── figures/
 │       ├── ortak_grafikler/         # Multi-model Entity F1 & Prompt-vs-Schema comparison PNGs
 │       ├── <model_slug>/{prompt_only,schema_constrained}/ # 5 charts per model per setting
@@ -135,12 +134,8 @@ python3 -m venv venv
 
 ### Step 5: View Reports & Presentation Slides
 - **4-Page Technical Report PDF:** Open [reports/NLP_Project_1_Report.pdf](reports/NLP_Project_1_Report.pdf)
+- **Presentation Slides PDF (12 Pages):** Open [reports/slaytlar.pdf](reports/slaytlar.pdf)
 - **Markdown Benchmark Report:** Open [reports/benchmark_report.md](reports/benchmark_report.md)
-- **HTML Slides:** Open [reports/slaytlar.html](reports/slaytlar.html) in a browser or serve locally:
-  ```bash
-  python3 -m http.server 8000
-  # then visit http://localhost:8000/reports/slaytlar.html
-  ```
 
 ---
 
