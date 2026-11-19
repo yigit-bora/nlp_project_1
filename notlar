@@ -1,0 +1,29 @@
+Evet, tablodaki satırları adım adım inceleyince asıl mekanizma net bir şekilde ortaya çıkıyor. Olay sadece teorik bir ihtimal değil; tablodaki format_type, is_pure_json ve is_valid_syntax değerleri bunu doğrudan kanıtlıyor.
+
+Doğruluğun sıcaklıkla artmasının altında yatan iki somut sebep şunlar:
+1. pure_json Oranının Sıcaklıkla Patlaması (En Büyük Etken)
+
+Pipeline'ındaki genel başarı veya strict doğruluk metriği, cevabın doğrudan { ile başlayıp } ile bitmesini (is_pure_json == True) şart koşuyor.
+
+CSV'deki dağılıma baktığında:
+
+    Temperature 0.1: Model tamamen deterministik davrandığı için pre-training'den gelen en baskın refleksi işletiyor: JSON çıktısı istenince Markdown kod bloğu (json ... ) açmak. Tablodaki ilk 70 örneğin neredeyse %95'i format_type = markdown_fence. Model cevabı doğru bilse bile is_pure_json = False olduğu için doğruluk sıfıra çakılıyor.
+
+    Temperature 0.4 ve 0.7: Sıcaklık arttıkça modelin ilk token olarak ````json seçme olasılığı zayıflıyor. Alternatif token olasılıkları devreye giriyor ve doğrudan { basmaya başlıyor.
+
+    Temperature 1.0: Rastgelelik zirveye çıktığında model Markdown çitini tamamen unutup doğrudan { ile başlıyor. Tabloda format_type = pure_json olan örnek sayısı tavan yapıyor (örneğin 2, 5, 6, 7, 11, 12, 17, 21, 22, 25, 26...).
+
+Çıktı saf JSON olduğu anda pipeline bunu doğrudan geçerli/başarılı saydığı için doğruluk eğrisi sıcaklık arttıkça yukarı fırlıyor.
+2. Düşük Sıcaklıkta Kısırdöngüye Girip Syntax Bozması
+
+Sıcaklık 0.1 ve 0.4 iken model deterministik seçim yüzünden entities listesinde aynı kelimeleri tekrar tekrar yazarak kısırdöngüye giriyor ve belirlediğin max_tokens: 256 sınırına tosluyor. Token sınırı dolunca Ollama üretimi aniden kesiyor, JSON kapanış parantezi (}) basılamıyor ve syntax çöküyor (invalid_syntax).
+
+Tablodan somut kanıtlar:
+
+    Örnek 34 (Temp 0.1 & 0.4): eval_tokens = 256 olmuş. Çıktı: ["bir", "bir", "bir", ...] şeklinde sonsuz döngüye girmiş, 256. tokende kesilmiş ve is_valid_syntax = False dönmüş.
+
+    Örnek 48 (Temp 0.1): eval_tokens = 256 olmuş. "paranizi", "almalarina", "izin", ... diye tekrara girmiş ve yine kapanamadan patlamış.
+
+    Aynı Örneklerin Temp 0.7 ve 1.0 Halleri: Sıcaklık artınca model döngüden kurtulmuş; 30–50 token içinde listeyi bitirip JSON'ı } ile başarıyla kapatmış (is_valid_syntax = True).
+
+Model yüksek sıcaklıkta daha akıllı davrandığı için değil; düşük sıcaklıkta Markdown çitine ve token tekrar kısırdöngüsüne hapsolduğu, yüksek sıcaklıkta ise bu iki blokajı şans eseri kırıp saf JSON formatına ulaştığı için grafiklerin ters çıkıyor.

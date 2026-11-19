@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Yapılandırılmış Çıktı & Sıcaklık Stres Testi — Sunum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --orange: #fb923c;
+      --green: #4ade80;
+      --red: #f87171;
+      --purple: #c084fc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* Ambient Glow Background */
+    .ambient-glow {
+      position: fixed;
+      top: 10%;
+      left: 20%;
+      width: 50vw;
+      height: 50vh;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(192, 132, 252, 0.04) 50%, transparent 80%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Header Bar */
+    header {
+      z-index: 10;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .badge-live {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .controls-hint {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .key {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Slide Viewport */
+    .slide-viewport {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 32px 50px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(40px) scale(0.98);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0) scale(1);
+    }
+
+    .slide-header {
+      margin-bottom: 24px;
+    }
+
+    .slide-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .slide-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+    }
+
+    .slide-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-top: 6px;
+    }
+
+    /* Content Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 28px;
+      flex: 1;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card.highlight-blue {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(56, 189, 248, 0.05));
+    }
+
+    .card.highlight-orange {
+      border-color: rgba(251, 146, 60, 0.4);
+      background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(251, 146, 60, 0.05));
+    }
+
+    .card.highlight-red {
+      border-color: rgba(248, 113, 113, 0.4);
+      background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(248, 113, 113, 0.05));
+    }
+
+    .card.highlight-green {
+      border-color: rgba(74, 222, 128, 0.4);
+      background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(74, 222, 128, 0.05));
+    }
+
+    .paradox-box {
+      border-left: 4px solid var(--red);
+      background: rgba(248, 113, 113, 0.08);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .truth-box {
+      border-left: 4px solid var(--green);
+      background: rgba(74, 222, 128, 0.08);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .box-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .img-container {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 480px;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px 7px;
+      border-radius: 5px;
+      color: var(--accent);
+      font-size: 0.82rem;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Footer Navigation Bar */
+    footer {
+      z-index: 10;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--card-border);
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent);
+      color: #0b0f19;
+      border-color: var(--accent);
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      max-width: 380px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0 24px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      width: 12.5%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .slide-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    ul.bullet-list {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.96rem;
+      line-height: 1.5;
+    }
+
+    ul.bullet-list li strong {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <span>⚡ NLP Research Benchmark</span>
+      <span class="badge-live">1.200 Çıkarım Testi</span>
+    </div>
+    <div class="controls-hint">
+      İlerlemek için <span class="key">←</span> <span class="key">→</span> veya <span class="key">Boşluk</span> tuşunu kullanın
+    </div>
+  </header>
+
+  <!-- Slide Viewport -->
+  <main class="slide-viewport">
+
+    <!-- Slayt 1: Başlık & Benchmark Veri Seti -->
+    <section class="slide active">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 920px;">
+        <span class="slide-tag">Araştırma & Stres Testi Raporu</span>
+        <h1 class="slide-title" style="font-size: 2.3rem; margin-bottom: 12px;">
+          LLM Yapılandırılmış Çıktı & Sıcaklık Stres Testi: Görünürdeki Çelişkiler ve Arkasındaki Gerçekler
+        </h1>
+        <p class="slide-subtitle" style="font-size: 1.05rem; line-height: 1.5; margin-bottom: 20px;">
+          3 Yerel LLM (<span class="code-pill">Llama 3.1 8B</span>, <span class="code-pill">Llama 3.2 3B</span>, <span class="code-pill">Qwen 2.5 1.5B</span>) üzerinde format disiplini ile anlamsal başarının 3 katmanda incelenmesi.
+        </p>
+
+        <div class="grid-3" style="margin-bottom: 20px;">
+          <div class="card" style="padding: 16px 20px;">
+            <div class="stat-number" style="color: var(--accent); font-size: 2rem;">3 Model</div>
+            <div class="stat-label">1.5B, 3B ve 8B Parametre</div>
+          </div>
+          <div class="card" style="padding: 16px 20px;">
+            <div class="stat-number" style="color: var(--purple); font-size: 2rem;">1.200</div>
+            <div class="stat-label">Toplam Test Çıkarımı</div>
+          </div>
+          <div class="card" style="padding: 16px 20px;">
+            <div class="stat-number" style="color: var(--green); font-size: 2rem;">4 Sıcaklık</div>
+            <div class="stat-label">T = 0.1, 0.4, 0.7, 1.0</div>
+          </div>
+        </div>
+
+        <!-- Etiketli Veri Seti Tanıtımı Kartı -->
+        <div class="card" style="border-left: 4px solid var(--accent); background: rgba(30, 41, 59, 0.7); padding: 18px 22px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-weight: 700; font-size: 0.95rem; color: #fff; display: flex; align-items: center; gap: 8px;">
+              📂 Benchmark Veri Seti Kaynağı: <span class="code-pill" style="color: var(--accent);">winvoker/turkish-sentiment-analysis-dataset</span>
+            </div>
+            <span style="font-size: 0.78rem; color: var(--accent); background: rgba(56, 189, 248, 0.12); padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(56, 189, 248, 0.25);">
+              HuggingFace • 200 Filtrelenmiş Gerçek Türkçe Metin (60-320 krk)
+            </span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 12px;">
+            Testlerde sentetik veri yerine, internetteki 3 farklı alandan toplanmış ve insan eliyle etiketlenmiş açık kaynak veri seti kullanılmıştır:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 10px 14px;">
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-bottom: 4px;">🛒 Ürün Yorumları (70 Metin)</div>
+              <div style="font-size: 0.76rem; color: var(--text-muted); line-height: 1.4;">
+                <strong>Kaynak:</strong> Hepsiburada kullanıcı yorumları<br>
+                <strong>Etiketler:</strong> 35 Olumlu, 35 Olumsuz
+              </div>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 10px 14px;">
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--purple); margin-bottom: 4px;">🎬 Sinema Eleştirileri (70 Metin)</div>
+              <div style="font-size: 0.76rem; color: var(--text-muted); line-height: 1.4;">
+                <strong>Kaynak:</strong> HUMIR / Beyazperde eleştirileri<br>
+                <strong>Etiketler:</strong> 35 Olumlu, 35 Olumsuz
+              </div>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 10px 14px;">
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--green); margin-bottom: 4px;">📚 Ansiklopedi (60 Metin)</div>
+              <div style="font-size: 0.76rem; color: var(--text-muted); line-height: 1.4;">
+                <strong>Kaynak:</strong> Türkçe Vikipedi (Wikipedia)<br>
+                <strong>Etiketler:</strong> 60 Nötr (Nesnel bilgi metinleri)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 2: 3 Katmanlı Mimari -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Metodoloji</span>
+        <h2 class="slide-title">Neden Tek Bir Doğruluk Metriği Yetmez?</h2>
+        <p class="slide-subtitle">Modelin "JSON yazma disiplini" ile "Türkçe metni doğru anlama zekası" birbirinden bağımsızdır.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card highlight-blue">
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--accent);">Katman 1: Format Disiplini</div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">
+            Model promptta verilen <em>"Hiçbir açıklama veya markdown ekleme"</em> kuralına sıfır toleransla uyup doğrudan <span class="code-pill">{</span> ile başladı mı?
+          </p>
+          <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--card-border); font-size: 0.85rem; color: var(--text-muted);">
+            Ölçülen: <strong style="color: #fff;">pure_json_rate</strong>
+          </div>
+        </div>
+
+        <div class="card highlight-orange">
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--orange);">Katman 2: Strict Doğruluk</div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">
+            Üretim ortamında hiçbir otomatik kurtarma kodu olmadığını varsayan katıdır. Model başına markdown çiti koyduysa, cevabı doğru olsa bile <strong>0 PUAN (FAIL)</strong> alır.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--card-border); font-size: 0.85rem; color: var(--text-muted);">
+            Ölçülen: <strong style="color: #fff;">strict_accuracy</strong>
+          </div>
+        </div>
+
+        <div class="card highlight-green">
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">Katman 3: Parsed Doğruluk</div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">
+            Dış ambalaj (markdown veya gevezelik) temizlendiğinde, modelin içindeki JSON okunur ve Türkçe metnin türü ile duygusunu doğru bilip bilmediği ölçülür.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--card-border); font-size: 0.85rem; color: var(--text-muted);">
+            Ölçülen: <strong style="color: #fff;">parsed_accuracy</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 3: Çelişki 1 — Qwen Sıcaklık Paradoksu -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Paradoks 1 &bullet; Qwen 2.5 (1.5B)</span>
+        <h2 class="slide-title">Sıcaklık Arttıkça Doğruluk Neden Fırladı?</h2>
+        <p class="slide-subtitle">Sıcaklık arttıkça model daha mı zeki oldu, yoksa şans eseri mi kurtuldu?</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="paradox-box">
+            <div class="box-title" style="color: var(--red);">❓ İlk Bakışta Saçma Gelen Durum</div>
+            LLM teorisinde sıcaklık arttıkça halüsinasyon artmalı ve doğruluk düşmelidir. Ancak Qwen 2.5'te Strict Doğruluk <strong>T=0.1'de %6 iken T=0.7'de %25'e yükseldi!</strong>
+          </div>
+
+          <div class="truth-box">
+            <div class="box-title" style="color: var(--green);">💡 Keşfettiğimiz Gerçek</div>
+            <ul class="bullet-list" style="margin-top: 8px;">
+              <li><strong>Deterministik Alışkanlık:</strong> Model T=0.1'de pre-training ezberiyle inatla <span class="code-pill">```json</span> markdown bloğu açıyordu.</li>
+              <li><strong>Haksız Ceza:</strong> Katı pipeline saf JSON aradığı için cevap doğru olsa dahi her örneği <strong>0 puan</strong> sayıyordu.</li>
+              <li><strong>Sıcaklığın Etkisi:</strong> Sıcaklık arttıkça model bu refleksi gevşetti; doğrudan <span class="code-pill">{</span> basma olasılığı devreye girdi (%9'dan %31'e çıktı).</li>
+              <li><strong>Çıkarım:</strong> Model yüksek sıcaklıkta daha iyi anlamadı; sadece <em>tesadüfen markdown çitini unutabildiği için</em> strict puanı yükseldi!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="img-container">
+          <img src="figures/qwen2.5_1.5b/prompt_only/dashboard.png" alt="Qwen 2.5 Dashboard">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 4: Akademik Teori vs Gerçeklik (Holtzman et al. Paradoksu) -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Akademik Literatür &bullet; Derin NLP Analizi</span>
+        <h2 class="slide-title">Literatür Çelişkisi: "Düşük Sıcaklık Kuralı" Neden Çöktü?</h2>
+        <p class="slide-subtitle">Akademik Kural: "JSON için T=0 yapın" &bull; Bizim Sonuç: T arttıkça Saf JSON %9'dan %31'e çıktı!</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card highlight-blue">
+          <div style="font-size: 1.15rem; font-weight: 700; color: var(--accent); margin-bottom: 4px;">
+            📚 Standart Literatür Ne Diyor?
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+            OpenAI, Anthropic ve akademik kıyaslama makalelerinde (<em>JSONSchemaBench, StructuredRAG</em>) genel kabul şudur:
+          </p>
+          <div class="paradox-box" style="border-left-color: var(--accent); background: rgba(56, 189, 248, 0.08); margin: 6px 0;">
+            <em>"Yapılandırılmış çıktı (JSON) istiyorsanız sıcaklığı mutlaka 0.0 veya 0.1 yapın. Sıcaklık arttıkça rastgelelik artar, parantezler unutulur ve sözdizimi çöker."</em>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #fff; margin-top: 4px;">
+            <strong>Bizim Qwen 2.5 Testi İse Tam Tersini Gösterdi:</strong><br>
+            Sıcaklık 0.1'den 0.7'ye çıktıkça Saf JSON oranı <strong>%9'dan %31'e tırmandı!</strong>
+          </p>
+        </div>
+
+        <div class="card highlight-orange">
+          <div style="font-size: 1.15rem; font-weight: 700; color: var(--orange); margin-bottom: 4px;">
+            🔬 Bu Çelişkiyi Açıklayan Akademik Teori
+          </div>
+          <p style="font-size: 0.92rem; line-height: 1.5; color: var(--text-muted);">
+            <strong>Holtzman et al. (ICLR 2020)</strong> — <em>"The Curious Case of Neural Text Degeneration"</em>:
+          </p>
+          <ul class="bullet-list" style="font-size: 0.9rem; gap: 8px; margin-top: 6px;">
+            <li><strong>Mode Collapse Tuzağı:</strong> T=0.1'de model deterministik greedy decoding'e kilitlenir ve olasılık dağılımındaki en sivri tepeye (peak logit) hapsolur.</li>
+            <li><strong>Prior vs Constraint Çatışması:</strong> Küçük modelde (1.5B) pre-training'deki devasa <span class="code-pill">```json</span> ezberi, sistem promptundaki negatif yasaktan (<em>"asla markdown kullanma"</em>) daha baskındır.</li>
+            <li><strong>Stochastic Escape (Rastlantısal Kurtuluş):</strong> T=0.7'de softmax dağılımı yumuşar; model yerel minimumdan (ezber çitinden) kaçıp doğrudan <span class="code-pill">{</span> basabilir!</li>
+            <li><strong>Neden 8B'de Olmadı?:</strong> Llama 3.1 8B, negatif kısıtlamayı anlayıp ezberini susturacak parametre gücüne sahiptir (T=0.1'de de %100 saf JSON).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="truth-box" style="margin-top: 18px;">
+        <div class="box-title" style="color: var(--green);">🎓 Tez / Sunum İçin Özet Cümle</div>
+        <p style="font-size: 0.95rem; line-height: 1.5;">
+          <em>"Literatürde düşük sıcaklığın JSON sözdizimini garanti altına aldığı kabul edilse de, 1.5B gibi küçük modellerde düşük sıcaklık 'Mode Collapse' yaratarak modeli pre-training'deki Markdown kod bloğu ezberine kilitlemektedir. Sıcaklığın 0.7'ye çıkarılması, modelin bu yerel tepe noktasından kaçmasını sağlayarak Saf JSON oranını paradoksal biçimde %9'dan %31'e yükseltmiştir."</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- Slayt 5: Çelişki 2 — 3B Llama, 1.5B Qwen'e Neden Ezildi? -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Paradoks 2 &bullet; Model Karşılaştırması</span>
+        <h2 class="slide-title">Daha Büyük Parametre Her Zaman Daha İyi Değildir!</h2>
+        <p class="slide-subtitle">3 Milyar parametreli Llama 3.2, 1.5 Milyar parametreli Qwen'e karşı iki kulvarda da ezildi.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card highlight-red" style="padding: 16px;">
+            <div style="font-weight: 700; color: var(--red);">1. Llama 3.2'nin Etiket Halüsinasyonu:</div>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 4px;">
+              Kuralda <em>"Sadece urun, sinema, ansiklopedi yaz"</em> dendiği halde Llama 3.2; <strong>film (51 kez)</strong>, <strong>yorum (27 kez)</strong>, <strong>matkap markaları</strong>, <strong>davlumbaz</strong>, <strong>hepsiburada</strong> gibi kafasına göre serbest etiketler uydurdu! Bu yüzden kategori başarısı <strong>%32'ye çakıldı</strong> (Qwen: %57).
+            </p>
+          </div>
+
+          <div class="card highlight-orange" style="padding: 16px;">
+            <div style="font-weight: 700; color: var(--orange);">2. Nötr Duygu Körlüğü:</div>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 4px;">
+              Qwen 2.5 400 örnekte 104 kez <strong>notr</strong> duygusunu başarıyla yakalarken, Llama 3.2 <strong>sadece 1 kez</strong> nötr diyebildi! Tüm nötr metinleri siyah/beyaz (olumlu/olumsuz) sandı.
+            </p>
+          </div>
+
+          <div class="card highlight-blue" style="padding: 16px;">
+            <div style="font-weight: 700; color: var(--accent);">3. Chatbot Gevezelik Refleksi:</div>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 4px;">
+              Llama 3.2 her yanıtın başına <em>"Aşağıdaki metin oluşturulabilir:"</em> eklediği için Saf JSON oranı <strong>%0-3</strong> aralığında kaldı.
+            </p>
+          </div>
+        </div>
+
+        <div class="card highlight-blue" style="justify-content: center;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--accent);">Büyük Modellerin "Aşırı Yaratıcılık" Tuzağı</h3>
+          <p style="font-size: 1rem; line-height: 1.6; color: var(--text-muted);">
+            Llama 3.2 diyalog odaklı (RLHF) eğitildiği için verilen 3 kategoriyi fazla sıkıcı ve dar buluyor; metinde elektrikli süpürge görünce <em>"urun"</em> demek yerine <em>"davlumbaz"</em> diyerek kendi bildiğini okuyor.
+          </p>
+          <p style="font-size: 1rem; line-height: 1.6; color: #fff; margin-top: 12px;">
+            <strong>Qwen 2.5 ise kod ve kural disipliniyle eğitildiği için</strong> asla kuralların dışına çıkmıyor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 6: Kurumsal Risk & Maliyet Haritası (Qwen vs Llama 3.2 Sonrası) -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Kurumsal Risk &amp; ROI Haritası</span>
+        <h2 class="slide-title">Bu Deneyi Yapmadan Model Seçmenin Faturası!</h2>
+        <p class="slide-subtitle">"Llama 3.2 (3B) Meta'nındır, kesin daha iyidir" diyerek yola çıkan bir şirketin zaman ve bütçe kaybı (1 Milyon Veri Simülasyonu)</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size: 1.15rem; color: var(--accent);">📊 Benchmark Ölçüm Verilerimiz</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Metrik</th>
+                <th>Qwen 2.5 (1.5B)</th>
+                <th>Llama 3.2 (3B)</th>
+                <th>Fark / Sonuç</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Token Üretim Hızı</strong></td>
+                <td style="color: var(--green); font-weight:700;">144.1 TPS</td>
+                <td style="color: var(--orange);">74.7 TPS</td>
+                <td>Qwen ~2 kat daha hızlı</td>
+              </tr>
+              <tr>
+                <td><strong>Ortalama Üretilen Token</strong></td>
+                <td style="color: var(--green); font-weight:700;">45.8 token</td>
+                <td style="color: var(--red); font-weight:700;">68.5 token</td>
+                <td>Llama %50 gereksiz laf kalabalığı</td>
+              </tr>
+              <tr>
+                <td><strong>İstek Başına Gecikme</strong></td>
+                <td style="color: var(--green); font-weight:700;">0.343 sn</td>
+                <td style="color: var(--red); font-weight:700;">0.965 sn</td>
+                <td>Llama <strong>2.81 kat daha yavaş!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Sözdizimi Geçerliliği</strong></td>
+                <td style="color: var(--green); font-weight:700;">%98.5</td>
+                <td style="color: var(--red);">%93.2</td>
+                <td>Llama'da %6.8 retry gereksinimi</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="paradox-box" style="margin-top: 8px;">
+            <div class="box-title" style="color: var(--red);">⚠️ Chat Refleksinin Gizli Maliyeti (Token Inflation)</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.45;">
+              Llama 3.2 sadece donanımda %50 yavaş olmakla kalmaz; her cevabın başına <code>"Aşağıdaki metin, JSON formatında oluşturulabilir:\n\n"</code> gibi ~23 gereksiz token ekler. Yavaş hız + gereksiz token çarpılınca tek istek süresi neredeyse 3 katına çıkar!
+            </p>
+          </div>
+        </div>
+
+        <div class="card highlight-blue">
+          <h3 style="font-size: 1.15rem; color: var(--accent);">🏢 1.000.000 Kayıtlık Kurumsal Simülasyon (AWS A10G / RTX 4090)</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px;">
+            <div style="background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.25); border-radius: 12px; padding: 14px;">
+              <span style="font-size: 0.8rem; font-weight:700; color: var(--green); text-transform:uppercase;">⚡ Qwen 2.5 (1.5B)</span>
+              <div style="font-size: 1.8rem; font-weight:800; color: #fff; margin: 6px 0 2px 0;">95 Saat</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">~4 Gün kesintisiz çalışma</div>
+              <div style="font-size: 0.85rem; color: var(--green); font-weight: 600; margin-top: 6px;">Bulut GPU: ~$114</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">%98.5 temiz &amp; geçerli veri</div>
+            </div>
+
+            <div style="background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 12px; padding: 14px;">
+              <span style="font-size: 0.8rem; font-weight:700; color: var(--red); text-transform:uppercase;">🐌 Llama 3.2 (3B)</span>
+              <div style="font-size: 1.8rem; font-weight:800; color: #fff; margin: 6px 0 2px 0;">286+ Saat</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">~12 Gün (68k retry dahil)</div>
+              <div style="font-size: 0.85rem; color: var(--red); font-weight: 600; margin-top: 6px;">Bulut GPU: ~$343</div>
+              <div style="font-size: 0.8rem; color: var(--red); margin-top: 2px;">%68'inde uydurma etiket!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 7: Altın Standart Llama 3.1 (Peki Doğru Çözüm Nedir?) -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Peki Doğru Çözüm Nedir? &bullet; Altın Standart</span>
+        <h2 class="slide-title">Llama 3.1 (8B) Neden Kusursuz Çalıştı?</h2>
+        <p class="slide-subtitle">Sıfır format hatası, sıfır kod temizliği, %100 saf JSON ve %90 doğruluk.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card highlight-green" style="padding: 18px;">
+            <div class="stat-number" style="color: var(--green);">%100.0 Saf JSON</div>
+            <div class="stat-label">Tüm sıcaklıklarda istisnasız sıfır toleranslı tam başarı</div>
+          </div>
+
+          <ul class="bullet-list" style="margin-top: 10px;">
+            <li><strong>Negatif Kısıtlama Eşiği:</strong> 8 Milyar parametre seviyesine çıkıldığında model, <em>"Açıklama yapma, markdown koyma"</em> gibi negatif kısıtlamaları anlayıp içindeki diyalog refleksini susturabilecek kapasiteye ulaşır.</li>
+            <li><strong>Yüksek Sınıflandırma:</strong> Kategori tespitinde <strong>%90</strong>, duygu tespitinde <strong>%81</strong> doğruluk yakalamıştır.</li>
+            <li><strong>Strict == Parsed:</strong> Saf JSON oranı %100 olduğu için iki eğri birebir çakışmıştır.</li>
+            <li><strong>Feda Edilen Şey (Trade-off):</strong> Hız! Qwen 144 TPS üretirken, Llama 3.1 <strong>~28 TPS</strong> üretir.</li>
+          </ul>
+        </div>
+
+        <div class="img-container">
+          <img src="figures/llama3.1_latest/prompt_only/dashboard.png" alt="Llama 3.1 Dashboard">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 8: Sonuç ve Çıkarılan 5 Altın Kural -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Sonuç &amp; Kapanış</span>
+        <h2 class="slide-title">Çıkarılan 5 Altın Kural (Takeaways)</h2>
+        <p class="slide-subtitle">1.200 çıkarımlık stres testinden elde ettiğimiz temel mühendislik ilkeleri</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card highlight-blue" style="gap: 16px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(56, 189, 248, 0.15); color: var(--accent); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(56, 189, 248, 0.3);">1</div>
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem;">Strict Metrik Aldatır</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Format kuralına uymayan modele 0 puan verirseniz gerçek zekasını kaçırırsınız. Format disiplini ile Türkçe anlama kabiliyeti birbirinden izole değerlendirilmelidir.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(251, 146, 60, 0.15); color: var(--orange); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(251, 146, 60, 0.3);">2</div>
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem;">Parametre Boyutu Her Şey Değildir</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Kod ve kural odaklı eğitilen 1.5B Qwen, diyalog odaklı (RLHF) 3B Llama 3.2'yi teknik görevde geride bırakmıştır. Eğitim veri seti tipi mimariden daha belirleyicidir.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(248, 113, 113, 0.15); color: var(--red); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(248, 113, 113, 0.3);">3</div>
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem;">Chat Refleksi JSON İçin Risk Taşır</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Llama 3.2 gibi sohbet modelleri kibarlık refleksiyle cevabın önüne açıklama metni ekleyerek API'ları patlatır, token israfı yapar ve gecikmeyi 2.8 kat artırır.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card highlight-green" style="gap: 16px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(192, 132, 252, 0.15); color: var(--purple); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(192, 132, 252, 0.3);">4</div>
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem;">Sıcaklık İki Uçlu Bir Bıçaktır</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Küçük modellerde T=0.7 kısırdöngüyü kırıp saf JSON oranını artırırken, T &gt; 0.7 modelin kimliğini unutup serbest felsefe ve makale krizine girmesine yol açar.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(74, 222, 128, 0.15); color: var(--green); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.3);">5</div>
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem;">Regex Cleaner Hayat Kurtarır</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">10 satırlık hafif bir regex temizleme katmanı, 1.5B parametreli hafif bir modeli %98.5 sözdizimi geçerliliği ve %76 anlamsal doğrulukla kurumsal seviyeye çıkarır.</p>
+            </div>
+          </div>
+
+          <div class="truth-box" style="margin-top: auto; padding: 12px 16px;">
+            <div class="box-title" style="color: var(--accent); font-size: 0.95rem;">🎯 Kapanış Notu</div>
+            <p style="font-size: 0.88rem; color: var(--text); line-height: 1.5;">
+              Yapılandırılmış veri üretiminde başarının anahtarı tek başına model boyutu değil; modelin eğitim türü, uygun sıcaklık seçimi ve sağlam bir temizleme (cleaning) mimarisidir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer>
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">
+      <span>&larr;</span> Önceki
+    </button>
+
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="slide-counter" id="slideCounter">1 / 8</div>
+
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+      Sonraki <span>&rarr;</span>
+    </button>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progressBar');
+    const slideCounter = document.getElementById('slideCounter');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function updateSlide() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      const percent = ((currentSlide + 1) / totalSlides) * 100;
+      progressBar.style.width = percent + '%';
+      slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+      prevBtn.style.opacity = currentSlide === 0 ? '0.4' : '1';
+      prevBtn.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+      nextBtn.textContent = currentSlide === totalSlides - 1 ? 'Başa Dön ↺' : 'Sonraki →';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+      } else {
+        currentSlide = 0;
+      }
+      updateSlide();
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    // Keyboard Navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
