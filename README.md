@@ -67,7 +67,8 @@ Local open-source LLM evaluation project implemented in Python using **Ollama** 
 ├── reports/
 │   ├── NLP_Project_1_Report.pdf     # Final 4-page technical report (methodology, results, discussion)
 │   ├── benchmark_report.md          # Detailed Markdown summary report with links to all per-model tables
-│   ├── slaytlar.html                # Interactive HTML presentation slides (early Prompt-Only showcase)
+│   ├── slaytlar.html                # Interactive HTML presentation slides (12 slides, full results & insights)
+│   ├── slaytlar.pdf                 # Exported 12-page 16:9 PDF version of the presentation slides
 │   └── figures/
 │       ├── ortak_grafikler/         # Multi-model Entity F1 & Prompt-vs-Schema comparison PNGs
 │       ├── <model_slug>/{prompt_only,schema_constrained}/ # 5 charts per model per setting

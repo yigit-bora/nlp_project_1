@@ -372,7 +372,7 @@
   <header>
     <div class="brand">
       <span>⚡ NLP Research Benchmark</span>
-      <span class="badge-live">1.200 Çıkarım Testi</span>
+      <span class="badge-live">2.400 Çıkarım • 2 Ortam</span>
     </div>
     <div class="controls-hint">
       İlerlemek için <span class="key">←</span> <span class="key">→</span> veya <span class="key">Boşluk</span> tuşunu kullanın
@@ -390,21 +390,21 @@
           LLM Yapılandırılmış Çıktı & Sıcaklık Stres Testi: Görünürdeki Çelişkiler ve Arkasındaki Gerçekler
         </h1>
         <p class="slide-subtitle" style="font-size: 1.05rem; line-height: 1.5; margin-bottom: 20px;">
-          3 Yerel LLM (<span class="code-pill">Llama 3.1 8B</span>, <span class="code-pill">Llama 3.2 3B</span>, <span class="code-pill">Qwen 2.5 1.5B</span>) üzerinde format disiplini ile anlamsal başarının 3 katmanda incelenmesi.
+          3 Yerel LLM (<span class="code-pill">Llama 3.1 8B</span>, <span class="code-pill">Llama 3.2 3B</span>, <span class="code-pill">Qwen 2.5 1.5B</span> — <span class="code-pill">Q4_K_M</span>) üzerinde <strong>Prompt-Only</strong> vs. <strong>Schema-Constrained</strong> ortamlarında format disiplini, sınıflandırma ve varlık çıkarımı analizi.
         </p>
 
         <div class="grid-3" style="margin-bottom: 20px;">
           <div class="card" style="padding: 16px 20px;">
             <div class="stat-number" style="color: var(--accent); font-size: 2rem;">3 Model</div>
-            <div class="stat-label">1.5B, 3B ve 8B Parametre</div>
+            <div class="stat-label">1.5B, 3B ve 8B (Ollama v0.35.0)</div>
           </div>
           <div class="card" style="padding: 16px 20px;">
-            <div class="stat-number" style="color: var(--purple); font-size: 2rem;">1.200</div>
-            <div class="stat-label">Toplam Test Çıkarımı</div>
+            <div class="stat-number" style="color: var(--purple); font-size: 2rem;">2.400</div>
+            <div class="stat-label">100 Örnek × 4 Sıcaklık × 2 Ortam</div>
           </div>
           <div class="card" style="padding: 16px 20px;">
-            <div class="stat-number" style="color: var(--green); font-size: 2rem;">4 Sıcaklık</div>
-            <div class="stat-label">T = 0.1, 0.4, 0.7, 1.0</div>
+            <div class="stat-number" style="color: var(--green); font-size: 2rem;">130 Entity</div>
+            <div class="stat-label">Manuel Etiketli Altın Varlıklar</div>
           </div>
         </div>
 
@@ -723,63 +723,210 @@
       </div>
     </section>
 
-    <!-- Slayt 8: Sonuç ve Çıkarılan 5 Altın Kural -->
+    <!-- Slayt 8: Varlık Çıkarımı (Entity Extraction) & Türkçe Kuralı -->
     <section class="slide">
       <div class="slide-header">
-        <span class="slide-tag">Sonuç &amp; Kapanış</span>
-        <h2 class="slide-title">Çıkarılan 5 Altın Kural (Takeaways)</h2>
-        <p class="slide-subtitle">1.200 çıkarımlık stres testinden elde ettiğimiz temel mühendislik ilkeleri</p>
+        <span class="slide-tag">Bilgi Çıkarımı &bull; 130 Altın Varlık</span>
+        <h2 class="slide-title">Varlık Çıkarımı (Entity F1) ve Türkçe Karakter Tuzağı</h2>
+        <p class="slide-subtitle">İlk 100 örnekte manuel gold entity etiketleme, Exact vs. Partial Match ve Python lower() hatası.</p>
       </div>
 
       <div class="grid-2">
-        <div class="card highlight-blue" style="gap: 16px;">
+        <div class="card">
+          <div class="card highlight-blue" style="padding: 14px 16px;">
+            <div style="font-weight: 700; color: var(--accent);">🇹🇷 Türkçe <code>str.lower()</code> Combining Dot Hatası</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; margin-top: 4px;">
+              Python'da <span class="code-pill">'İSTANBUL'.lower()</span> ifadesi <span class="code-pill">'i\u0307stanbul'</span> (birleştirici nokta) üretir ve <span class="code-pill">'istanbul'</span> ile eşleşmez!
+              Bu yüzden <span class="code-pill">src/metrics.py:14</span> içinde önce <span class="code-pill">.replace('İ','i').replace('I','ı').lower()</span> uygulandı.
+            </p>
+          </div>
+
+          <div class="card highlight-green" style="padding: 14px 16px;">
+            <div style="font-weight: 700; color: var(--green);">🎯 Neden Exact + Partial Match Birlikte?</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; margin-top: 4px;">
+              Türkçe eklemeli bir dil olduğu için modeller varlığı doğru bulsa bile çekim ekiyle üretebilir (<em>"De Niro"</em> yerine <em>"de nironun"</em>).
+              <strong>Exact Match</strong> sınır kesme (boundary) başarısını (%23–%50), <strong>Partial Match</strong> ise gerçek yakalama (semantic recall) gücünü (%40–%64.4) ölçer.
+            </p>
+          </div>
+
+          <div class="truth-box" style="padding: 10px 14px;">
+            <div class="box-title" style="color: var(--green); font-size: 0.9rem;">🏆 Prompt-Only Lideri: Llama 3.1 (8B)</div>
+            <p style="font-size: 0.85rem;">T=0.1'de <strong>%50.4 Exact F1</strong> ve <strong>%64.4 Partial F1</strong> ile küçük modellere ~20 puan fark attı.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="img-container" style="max-height: 235px;">
+            <img src="figures/ortak_grafikler/multi_model_exact_f1.png" alt="Multi Model Exact F1">
+          </div>
+          <div class="img-container" style="max-height: 235px;">
+            <img src="figures/ortak_grafikler/multi_model_partial_f1.png" alt="Multi Model Partial F1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 9: Deneysel Ortam 2 — Schema-Constrained (format=JSON_SCHEMA) -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Deneysel Ortam 2 &bull; GBNF Gramer Maskeleme</span>
+        <h2 class="slide-title">Schema-Constrained Decoding: Format Çöküşü Nasıl Çözüldü?</h2>
+        <p class="slide-subtitle">Ollama <code>format = JSON_SCHEMA</code> ile 1.200 yeni çıkarım: küçük modellerde %0–31'den %96–100'e sıçrama.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <ul class="bullet-list" style="font-size: 0.92rem; gap: 10px;">
+            <li><strong>Mekanizma:</strong> Ollama JSON şemasını bir <strong>GBNF Gramerine</strong> derler; her token adımında şemayı bozan tokenların logitleri <span class="code-pill">-&infin;</span> ile maskelenir.</li>
+            <li><strong>Qwen 2.5 (1.5B):</strong> Saf JSON oranı <strong>%9–%31 &rarr; %96–%100</strong>'e fırladı; markdown çitleri yok olduğu için hız da arttı (144 &rarr; <strong>151–164 TPS</strong>).</li>
+            <li><strong>Llama 3.2 (3B):</strong> Saf JSON oranı <strong>%0–%3 &rarr; %98–%100</strong>'e, Kategori Macro F1 skoru ise <strong>%3.1–4.2 &rarr; %48.9–50.8</strong>'e çıktı.</li>
+            <li><strong>Neden %96–99 (Tam %100 Değil)?</strong> Şemadaki <span class="code-pill">entities</span> dizisinde <span class="code-pill">maxItems</span> kısıtı olmadığı için küçük modeller tekrar döngüsüne girip <span class="code-pill">eval_tokens = 256</span> sınırında kesildi (Qwen'de 8, Llama 3.2'de 4 kayıt).</li>
+          </ul>
+        </div>
+
+        <div class="img-container">
+          <img src="figures/ortak_grafikler/prompt_vs_schema_comparison.png" alt="Prompt vs Schema Comparison">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 10: Kritik Çıkarım — Kapalı Uçlu Kazanç vs Açık Uçlu Entity Zaafı -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Kritik Keşif &bull; Task Accuracy Dikotomisi</span>
+        <h2 class="slide-title">Schema-Constrained Neden Entity F1 Skorunu Düşürdü?</h2>
+        <p class="slide-subtitle">Kapalı uçlu (<code>enum</code>) sınıflandırmada dev kazanç, açık uçlu (<code>entities</code>) çıkarımında 3–6 puanlık kayıp!</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="truth-box" style="padding: 12px 15px;">
+            <div class="box-title" style="color: var(--green);">✅ Kapalı Uçlu Görev (<code>category</code> / <code>sentiment</code>)</div>
+            <p style="font-size: 0.87rem; line-height: 1.45;">
+              Sabit <code>enum</code> kümesi dışına çıkmayı engellediği için <strong>Llama 3.1 Kategori Macro F1 %67.8 &rarr; %91.7</strong>'ye, <strong>Llama 3.2 ise %4.2 &rarr; %49.7</strong>'ye fırladı.
+            </p>
+          </div>
+
+          <div class="paradox-box" style="padding: 12px 15px;">
+            <div class="box-title" style="color: var(--red);">⚠️ Açık Uçlu Bilgi Çıkarımı (<code>entities</code>)</div>
+            <p style="font-size: 0.87rem; line-height: 1.45;">
+              <strong>Llama 3.1:</strong> Exact F1 <strong>%50.4 &rarr; %46.1</strong>, Partial F1 <strong>%64.4 &rarr; %61.5</strong> (T=1.0'da %55.9'a düştü).<br>
+              <strong>Llama 3.2:</strong> Exact F1 <strong>%30.8 &rarr; %27.9</strong>, Duygu Doğruluğu <strong>%69.0 &rarr; %64.3</strong>.
+            </p>
+          </div>
+
+          <div class="card highlight-blue" style="padding: 12px 15px;">
+            <div style="font-weight: 700; color: var(--accent); font-size: 0.9rem;">🔬 Ham Çıktılardan 2 Somut Sebep (16/100 Örnek Değişti):</div>
+            <p style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.45; margin-top: 4px;">
+              <strong>1. Otoregresif Bağlam Kayması (Örnek #11):</strong> Prompt-Only'de <code>"ürün"</code> yazıp <code>["ütü"]</code> bulan model, Schema modda <code>enum</code> zorlamasıyla <code>"urun"</code> yazınca KV-cache bağlamı kaydı ve <code>["ürün"]</code> üretip <code>"ütü"</code>'yü kaçırdı.<br>
+              <strong>2. Logit Maskeleme Baskısı (Örnek #9, #25):</strong> GBNF kısıtı doğal dağılımı bozarak <code>["Uma Thurman", "film"]</code> gibi fazladan jenerik varlıklar ekletti (Precision düştü).
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="img-container" style="max-height: 235px;">
+            <img src="figures/ortak_grafikler/multi_model_exact_f1_schema_constrained.png" alt="Schema Exact F1">
+          </div>
+          <div class="img-container" style="max-height: 235px;">
+            <img src="figures/ortak_grafikler/multi_model_partial_f1_schema_constrained.png" alt="Schema Partial F1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 11: Gerçek Dünya Sınırı — Karma Duygu (ABSA) ve İroni Tuzağı -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Canlı Testler &amp; İleri Mimari &bull; ABSA</span>
+        <h2 class="slide-title">Düz Şemanın Sınırı: Karma Yorumlar ve İroni (Sarkazm)</h2>
+        <p class="slide-subtitle">Veri setinde olmayan 5 yeni canlı test örneğinden (<code>demo_live.py</code>) çıkan pratik dersler.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card highlight-orange">
+          <div style="font-weight: 700; color: var(--orange); font-size: 1.05rem;">⚖️ Atfetme (Attribution) Problemi &amp; ABSA</div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            <em>"Philips kahve makinesi harika çalışıyor fakat Aras Kargo paketi ezmiş ve 6 gün geciktirmiş."</em>
+          </p>
+          <p style="font-size: 0.88rem; line-height: 1.5;">
+            Düz şema tüm metne tek bir <span class="code-pill">sentiment</span> atadığı için ürünün mü yoksa kargonun mu kötü olduğu ayrışmaz. Gerçek üretim sistemlerinde çözüm <strong>Aspect-Based Sentiment Analysis (ABSA)</strong> ile her varlığa kendi duygu etiketini bağlamaktır.
+          </p>
+        </div>
+
+        <div class="card highlight-red">
+          <div style="font-weight: 700; color: var(--red); font-size: 1.05rem;">🎭 Kasıtlı Hileli Örnek (<code>NEW-5</code> İroni Tuzağı)</div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+            <em>"Gerçekten muhteşem bir deneyim! Dyson süpürge daha ilk çalıştırmada bozuldu, Yurtiçi Kargo da günüme neşe kattı, bayıldım!"</em>
+          </p>
+          <div class="paradox-box" style="margin-top: 6px; padding: 10px 14px;">
+            <strong>Sonuç (Llama 3.1 8B &amp; Qwen 2.5 1.5B):</strong> İki model de cümledeki <em>"muhteşem, neşe kattı, bayıldım"</em> kelimelerine kanarak olumsuz şikayeti <span class="code-pill">olumlu</span> olarak etiketledi!
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+            JSON formatı %100 geçerli olsa bile pragmatik ironi için daha büyük bağlam veya CoT (önce akıl yürütme) gerekir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slayt 12: Sonuç ve Çıkarılan 6 Altın Kural -->
+    <section class="slide">
+      <div class="slide-header">
+        <span class="slide-tag">Sonuç &amp; Kapanış</span>
+        <h2 class="slide-title">Çıkarılan 6 Altın Kural (Takeaways)</h2>
+        <p class="slide-subtitle">2.400 çıkarımlık Prompt-Only &amp; Schema-Constrained çalışmasından temel mühendislik ilkeleri</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card highlight-blue" style="gap: 14px;">
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="background: rgba(56, 189, 248, 0.15); color: var(--accent); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(56, 189, 248, 0.3);">1</div>
+            <div style="background: rgba(56, 189, 248, 0.15); color: var(--accent); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(56, 189, 248, 0.3);">1</div>
             <div>
-              <strong style="color: #fff; font-size: 1.05rem;">Strict Metrik Aldatır</strong>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Format kuralına uymayan modele 0 puan verirseniz gerçek zekasını kaçırırsınız. Format disiplini ile Türkçe anlama kabiliyeti birbirinden izole değerlendirilmelidir.</p>
+              <strong style="color: #fff; font-size: 1rem;">Strict Metrik Aldatır</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;">Format kuralına uymayan modele 0 puan verirseniz gerçek anlamsal zekasını kaçırırsınız; format ve anlam ayrı ölçülmelidir.</p>
             </div>
           </div>
 
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="background: rgba(251, 146, 60, 0.15); color: var(--orange); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(251, 146, 60, 0.3);">2</div>
+            <div style="background: rgba(251, 146, 60, 0.15); color: var(--orange); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(251, 146, 60, 0.3);">2</div>
             <div>
-              <strong style="color: #fff; font-size: 1.05rem;">Parametre Boyutu Her Şey Değildir</strong>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Kod ve kural odaklı eğitilen 1.5B Qwen, diyalog odaklı (RLHF) 3B Llama 3.2'yi teknik görevde geride bırakmıştır. Eğitim veri seti tipi mimariden daha belirleyicidir.</p>
+              <strong style="color: #fff; font-size: 1rem;">Parametre Boyutu Her Şey Değildir</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;">Prompt-Only modda 1.5B Qwen, sohbet odaklı 3B Llama 3.2'yi hız, sözdizimi ve duygu doğruluğunda geride bırakmıştır.</p>
             </div>
           </div>
 
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="background: rgba(248, 113, 113, 0.15); color: var(--red); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(248, 113, 113, 0.3);">3</div>
+            <div style="background: rgba(248, 113, 113, 0.15); color: var(--red); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(248, 113, 113, 0.3);">3</div>
             <div>
-              <strong style="color: #fff; font-size: 1.05rem;">Chat Refleksi JSON İçin Risk Taşır</strong>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Llama 3.2 gibi sohbet modelleri kibarlık refleksiyle cevabın önüne açıklama metni ekleyerek API'ları patlatır, token israfı yapar ve gecikmeyi 2.8 kat artırır.</p>
+              <strong style="color: #fff; font-size: 1rem;">Sıcaklık İki Uçlu Bir Bıçaktır</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;">Qwen'de T=0.7 markdown ezberini kırıp Saf JSON'ı %9→%31 artırırken, Llama 3.2'de gevezeliği kışkırtıp şemayı %88'e düşürdü.</p>
             </div>
           </div>
         </div>
 
-        <div class="card highlight-green" style="gap: 16px;">
+        <div class="card highlight-green" style="gap: 14px;">
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="background: rgba(192, 132, 252, 0.15); color: var(--purple); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(192, 132, 252, 0.3);">4</div>
+            <div style="background: rgba(192, 132, 252, 0.15); color: var(--purple); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(192, 132, 252, 0.3);">4</div>
             <div>
-              <strong style="color: #fff; font-size: 1.05rem;">Sıcaklık İki Uçlu Bir Bıçaktır</strong>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">Küçük modellerde T=0.7 kısırdöngüyü kırıp saf JSON oranını artırırken, T &gt; 0.7 modelin kimliğini unutup serbest felsefe ve makale krizine girmesine yol açar.</p>
+              <strong style="color: #fff; font-size: 1rem;">Schema-Constrained İki Yönlüdür (Yeni Bulgu!)</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;">Kapalı uçlu <code>enum</code> sınıflandırmasında Macro F1'i uçururken (Llama 3.1: %67.8→%91.7), açık uçlu <code>entities</code> çıkarımında F1'i 3–4 puan düşürebilir.</p>
             </div>
           </div>
 
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="background: rgba(74, 222, 128, 0.15); color: var(--green); font-weight: 800; font-size: 1.2rem; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.3);">5</div>
+            <div style="background: rgba(74, 222, 128, 0.15); color: var(--green); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.3);">5</div>
             <div>
-              <strong style="color: #fff; font-size: 1.05rem;">Regex Cleaner Hayat Kurtarır</strong>
-              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">10 satırlık hafif bir regex temizleme katmanı, 1.5B parametreli hafif bir modeli %98.5 sözdizimi geçerliliği ve %76 anlamsal doğrulukla kurumsal seviyeye çıkarır.</p>
+              <strong style="color: #fff; font-size: 1rem;"><code>maxItems</code> ve Token Sınırı Şarttır</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;">Schema-constrained modda bile sınırsız diziler küçük modellerde tekrar döngüsüne girip 256 tokende kesilmeye yol açabilmektedir.</p>
             </div>
           </div>
 
-          <div class="truth-box" style="margin-top: auto; padding: 12px 16px;">
-            <div class="box-title" style="color: var(--accent); font-size: 0.95rem;">🎯 Kapanış Notu</div>
-            <p style="font-size: 0.88rem; color: var(--text); line-height: 1.5;">
-              Yapılandırılmış veri üretiminde başarının anahtarı tek başına model boyutu değil; modelin eğitim türü, uygun sıcaklık seçimi ve sağlam bir temizleme (cleaning) mimarisidir.
-            </p>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="background: rgba(56, 189, 248, 0.15); color: var(--accent); font-weight: 800; font-size: 1.15rem; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(56, 189, 248, 0.3);">6</div>
+            <div>
+              <strong style="color: #fff; font-size: 1rem;">Türkçe Normalizasyon Kritik Detaydır</strong>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 3px; line-height: 1.45;"><code>İ→i</code> ve <code>I→ı</code> dönüşümü yapılmadan standart <code>lower()</code> kullanılırsa büyük harfli Türkçe varlıklarda F1 skoru yapay olarak sıfırlanır.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -797,7 +944,7 @@
       <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <div class="slide-counter" id="slideCounter">1 / 8</div>
+    <div class="slide-counter" id="slideCounter">1 / 12</div>
 
     <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
       Sonraki <span>&rarr;</span>
