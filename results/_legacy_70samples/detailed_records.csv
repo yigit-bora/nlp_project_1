@@ -1,0 +1,1836 @@
+model,temperature,sample_id,gt_category,pred_category,strict_category_correct,parsed_category_correct,category_correct,gt_sentiment,pred_sentiment,strict_sentiment_correct,parsed_sentiment_correct,sentiment_correct,entity_count,is_pure_json,is_valid_syntax,format_type,json_error,tps,latency_sec,eval_tokens,raw_output_preview
+qwen2.5:1.5b,0.1,1,urun,ansiklopedi,False,False,False,olumlu,notr,False,False,False,4,False,True,markdown_fence,,38.27,3.06,51,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""cevre"", ""temizleme"", ""kargoda"", ""bedava""]
+}
+```"
+qwen2.5:1.5b,0.1,2,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,6,False,True,markdown_fence,,38.73,1.77,63,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""tavsiye"", ""fakat"", ""beklentimi"", ""saldı"", ""cildime"", ""iyi""]
+}
+```"
+qwen2.5:1.5b,0.1,3,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,2,True,True,pure_json,,39.4,1.01,35,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""2 yaş"", ""3 yaş""]
+}"
+qwen2.5:1.5b,0.1,4,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,38.52,1.147,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin son anları""]
+}
+```"
+qwen2.5:1.5b,0.1,5,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,38.26,1.347,40,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filim"", ""kaza sahnesi""]
+}
+```"
+qwen2.5:1.5b,0.1,6,urun,urun,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,38.97,1.279,44,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""ürün"", ""ürün"", ""ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,7,sinema,sinema,False,True,False,olumsuz,olumlu,False,False,False,4,False,True,markdown_fence,,39.07,1.468,45,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film"", ""sinirler"", ""oyuncu"", ""kız""]
+}
+```"
+qwen2.5:1.5b,0.1,8,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,1,False,True,markdown_fence,,37.69,1.104,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Karadeniz Teknik Üniversitesi""]
+}
+```"
+qwen2.5:1.5b,0.1,9,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,37.88,1.562,52,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""de niron"", ""oyunculuğu"", ""doruğa"", ""gerilim"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.1,10,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,2,True,True,pure_json,,38.79,1.229,43,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""büyük doğal gaz kaynakları"", ""keşfedilmiştir""]
+}"
+qwen2.5:1.5b,0.1,11,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,38.92,1.247,37,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""ürün"", ""ustu""]
+}
+```"
+qwen2.5:1.5b,0.1,12,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,38.93,1.568,55,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""en çok hayal kırıklığına uğradığım film"", ""Dizisinin çoğu bölümünden""]
+}
+```"
+qwen2.5:1.5b,0.1,13,urun,ansiklopedi,False,False,False,olumlu,olumsuz,False,False,False,2,False,True,markdown_fence,,37.98,1.251,40,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""araba"", ""cocuk""]
+}
+```"
+qwen2.5:1.5b,0.1,14,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,37.82,1.136,37,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sözlü""]
+}
+```"
+qwen2.5:1.5b,0.1,15,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,38.86,0.966,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,16,sinema,sinema,False,True,False,olumlu,olumsuz,False,False,False,3,False,True,markdown_fence,,38.86,1.302,43,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""Denzel"", ""Russel Crowe"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.1,17,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,16,False,True,markdown_fence,,39.71,2.987,108,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film"", ""horlanırmı"", ""evet"", ""horladım"", ""inannın"", ""ayıp"", ""verdiğim"", ""paraya"", ""yazık"", ""kıyamet"", ""filmiymiş"", ""alakası"", ""yarından"", ""sınırından"", ""gittim"", ""fiyasko""]
+}
+```"
+qwen2.5:1.5b,0.1,18,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,7,False,True,markdown_fence,,41.53,2.268,77,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""9,5 yaşındaki oğlum"", ""fotolar"", ""arka kapak"", ""menüler"", ""çeviriler"", ""şarjı"", ""dokunmatik hassasiyet""]
+}
+```"
+qwen2.5:1.5b,0.1,19,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.57,0.976,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""kapaktaki kızlar""]
+}
+```"
+qwen2.5:1.5b,0.1,20,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.74,1.835,59,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film"", ""3. seri"", ""tarzı"", ""olmayan"", ""3. lü"", ""sinemaseverler""]
+}
+```"
+qwen2.5:1.5b,0.1,21,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,4,False,True,markdown_fence,,42.39,1.412,46,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""ekran"", ""ürün"", ""tarifi"", ""sözde""]
+}
+```"
+qwen2.5:1.5b,0.1,22,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,42.31,1.364,46,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""İngiltere"", ""Her Majesty's Theatreda"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.1,23,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.76,0.972,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,24,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.53,1.022,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,25,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.61,1.055,38,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""uma thurman"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.1,26,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.95,1.31,47,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sinepuan"", ""eğişik"", ""film"", ""evet""]
+}
+```"
+qwen2.5:1.5b,0.1,27,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,3,False,True,markdown_fence,,42.0,1.385,51,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""gazetesi"", ""İstanbul merkezli bas"", ""İzmir""]
+}
+```"
+qwen2.5:1.5b,0.1,28,urun,urun,False,True,False,olumlu,olumsuz,False,False,False,3,False,True,markdown_fence,,42.01,1.326,42,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""kalite"", ""ısınma"", ""tost""]
+}
+```"
+qwen2.5:1.5b,0.1,29,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,41.94,1.022,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""The Avengers"", ""Tara""]
+}
+```"
+qwen2.5:1.5b,0.1,30,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.03,1.034,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,31,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.03,1.213,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""hepsiburada.com""]
+}
+```"
+qwen2.5:1.5b,0.1,32,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.17,1.065,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,33,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,4,False,True,markdown_fence,,42.07,1.243,47,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""hesap"", ""geçmiş"", ""kesinlik"", ""özellik""]
+}
+```"
+qwen2.5:1.5b,0.1,34,urun,,False,False,False,olumsuz,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,40.73,6.519,256,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"","
+qwen2.5:1.5b,0.1,35,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.34,0.914,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,36,ansiklopedi,ansiklopedi,True,True,True,notr,olumlu,False,False,False,3,True,True,pure_json,,42.05,1.138,42,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""kolo"", ""Sırp dans"", ""Kosova""]
+}"
+qwen2.5:1.5b,0.1,37,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.58,1.823,61,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""801 tk a+ modelini"", ""iyik"", ""iyiki"", ""bu ürün"", ""buradan aldığım ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,38,urun,sinema,False,False,False,olumsuz,olumlu,False,False,False,2,False,True,markdown_fence,,42.08,1.112,34,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""su"", ""ev""]
+}
+```"
+qwen2.5:1.5b,0.1,39,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,3,False,True,markdown_fence,,41.92,1.392,52,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""internet adı sunucuları"", ""Domain Name Sistemini"", ""Domain Name System""]
+}
+```"
+qwen2.5:1.5b,0.1,40,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.06,1.191,39,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""bir kitap"", ""iki kitap""]
+}
+```"
+qwen2.5:1.5b,0.1,41,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,42.04,1.329,43,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çekim gücü"", ""mutfakta"", ""herkes""]
+}
+```"
+qwen2.5:1.5b,0.1,42,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.08,1.28,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""anime"", ""dialogues""]
+}
+```"
+qwen2.5:1.5b,0.1,43,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.12,1.161,40,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""piyasada çok taklidi olan bir ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,44,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,4,False,True,markdown_fence,,41.78,1.526,47,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""sipariş"", ""lastik"", ""kitapçık""]
+}
+```"
+qwen2.5:1.5b,0.1,45,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.75,1.575,51,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Muhammed Ali"", ""Vietnam savaşı"", ""ABD'nin Vietnam politikası""]
+}
+```"
+qwen2.5:1.5b,0.1,46,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,4,False,True,markdown_fence,,41.8,1.443,54,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Brezilya"", ""pasaportu"", ""tarihten"", ""beş yıl""]
+}
+```"
+qwen2.5:1.5b,0.1,47,ansiklopedi,ansiklopedi,False,True,False,notr,olumsuz,False,False,False,2,False,True,markdown_fence,,41.84,1.076,40,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""elçi"", ""itaat""]
+}
+```"
+qwen2.5:1.5b,0.1,48,sinema,,False,False,False,olumsuz,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,40.67,6.622,256,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""berbatyazilan"", ""tum"", ""olumlu"", ""yorumlari"", ""mikatur"", ""seyahat"", ""acentesi"", ""sakin"", ""guvenipte"", ""gitmeyin"", ""tesise"", ""kandirip"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"", ""paranizi"", ""almalarina"", ""izin"","
+qwen2.5:1.5b,0.1,49,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,4,False,True,markdown_fence,,41.84,1.512,48,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""cihaz"", ""seans"", ""kisacısı"", ""paraya""]
+}
+```"
+qwen2.5:1.5b,0.1,50,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.19,1.132,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""duş başlığı"", ""duş hortu""]
+}
+```"
+qwen2.5:1.5b,0.1,51,ansiklopedi,sinema,False,False,False,notr,notr,False,True,False,2,False,True,markdown_fence,,42.17,1.092,40,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""zenginler"", ""yoksullar""]
+}
+```"
+qwen2.5:1.5b,0.1,52,urun,urun,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.09,1.176,38,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bisiklet"", ""inçe pile""]
+}
+```"
+qwen2.5:1.5b,0.1,53,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.34,1.002,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,54,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.22,1.143,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,55,urun,sinema,False,False,False,olumsuz,olumlu,False,False,False,6,False,True,markdown_fence,,41.01,1.875,64,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""davlumbaz"", ""çekişi"", ""bacasız"", ""servis"", ""alamayı düşünen"", ""saygılarımla""]
+}
+```"
+qwen2.5:1.5b,0.1,56,urun,urun,False,True,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.87,1.562,59,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""arabam"", ""kesinlike"", ""müzicı video"", ""hızlı aktarım"", ""hatasız çalışma""]
+}
+```"
+qwen2.5:1.5b,0.1,57,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.31,1.07,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.1,58,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,4,True,True,pure_json,,41.31,1.18,43,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Romero"", ""görüntüleri"", ""filmin"", ""devre""]
+}"
+qwen2.5:1.5b,0.1,59,urun,sinema,False,False,False,olumlu,olumsuz,False,False,False,2,False,True,markdown_fence,,41.85,1.048,37,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""mause"", ""bloody""]
+}
+```"
+qwen2.5:1.5b,0.1,60,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.37,0.911,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,61,sinema,sinema,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,41.93,1.283,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin sonu keşke böyle bitmeseydi""]
+}
+```"
+qwen2.5:1.5b,0.1,62,sinema,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,7,False,True,markdown_fence,,41.83,1.794,64,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""otelden"", ""memnun"", ""turistlere"", ""ilgi"", ""sevgi"", ""bize"", ""yok""]
+}
+```"
+qwen2.5:1.5b,0.1,63,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,2,False,True,markdown_fence,,42.05,1.196,44,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Suriye Caddesi"", ""kazı""]
+}
+```"
+qwen2.5:1.5b,0.1,64,sinema,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.04,1.193,44,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""oyunculuk"", ""yonetmenlik""]
+}
+```"
+qwen2.5:1.5b,0.1,65,urun,urun,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.82,1.676,61,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""fiyata muthis şarj"", ""tasarımda iyi parmak izi çalışması"", ""hız"", ""telefon""]
+}
+```"
+qwen2.5:1.5b,0.1,66,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.37,1.122,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.1,67,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.34,0.945,34,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""sensör""]
+}
+```"
+qwen2.5:1.5b,0.1,68,ansiklopedi,ansiklopedi,False,True,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.11,1.092,39,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sesler"", ""ışık""]
+}
+```"
+qwen2.5:1.5b,0.1,69,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.99,1.194,41,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""kamerası"", ""oyun""]
+}
+```"
+qwen2.5:1.5b,0.1,70,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.17,1.193,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ayagim""]
+}
+```"
+qwen2.5:1.5b,0.4,1,urun,,False,False,False,olumlu,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,40.41,6.852,256,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""cevre"", ""cemiyet"", ""temizleme"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", ""kaldı"", """
+qwen2.5:1.5b,0.4,2,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.04,1.136,41,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""tavsiye"", ""beklentim""]
+}
+```"
+qwen2.5:1.5b,0.4,3,urun,ansiklopedi,False,False,False,olumsuz,olumlu,False,False,False,2,False,True,markdown_fence,,42.14,1.05,39,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""2 yaş"", ""3 yaş""]
+}
+```"
+qwen2.5:1.5b,0.4,4,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.2,1.081,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin son anları""]
+}
+```"
+qwen2.5:1.5b,0.4,5,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.42,1.024,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,6,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.4,1.0,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""ürün""]
+}
+```"
+qwen2.5:1.5b,0.4,7,sinema,sinema,False,True,False,olumsuz,olumlu,False,False,False,4,False,True,markdown_fence,,42.01,1.407,45,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film"", ""sinirler"", ""oyuncu"", ""kız""]
+}
+```"
+qwen2.5:1.5b,0.4,8,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,1,False,True,markdown_fence,,42.35,0.994,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Karadeniz Teknik Üniversitesi""]
+}
+```"
+qwen2.5:1.5b,0.4,9,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.12,1.227,45,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""de nironun oyunculuğu"", ""gerilim filmi""]
+}
+```"
+qwen2.5:1.5b,0.4,10,ansiklopedi,ansiklopedi,True,True,True,notr,olumlu,False,False,False,0,True,True,pure_json,,42.65,0.775,28,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": []
+}"
+qwen2.5:1.5b,0.4,11,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,3,False,True,markdown_fence,,41.98,1.279,41,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""ürün"", ""şirket"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.4,12,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,41.87,1.464,55,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""en çok hayal kırıklığına uğradığım film"", ""dizisinin çoğu bölümünden""]
+}
+```"
+qwen2.5:1.5b,0.4,13,urun,ansiklopedi,False,False,False,olumlu,olumsuz,False,False,False,2,False,True,markdown_fence,,42.27,1.144,40,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""araba"", ""cocuk""]
+}
+```"
+qwen2.5:1.5b,0.4,14,urun,ansiklopedi,False,False,False,olumlu,notr,False,False,False,1,False,True,markdown_fence,,42.12,1.024,37,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""sözlü""]
+}
+```"
+qwen2.5:1.5b,0.4,15,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.44,0.893,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,16,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,42.03,1.189,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Denzel"", ""Russel Crowe"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.4,17,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,16,False,True,markdown_fence,,41.17,2.799,104,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film"", ""horlan"", ""evet"", ""horladım"", ""inannın"", ""ayıp"", ""verdiğim"", ""paraya"", ""yazık"", ""kıyamet"", ""filmiymiş"", ""alakası"", ""yarından"", ""sözleri"", ""gittim"", ""fiyasko""]
+}
+```"
+qwen2.5:1.5b,0.4,18,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,4,False,True,markdown_fence,,41.29,2.052,67,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""9,5 yaşındaki oğlum"", ""fotolar"", ""ekran çözünürlüğü"", ""dokunmatik hassasiyeti""]
+}
+```"
+qwen2.5:1.5b,0.4,19,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.08,1.13,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""kapaktaki kızlar"", ""genele bakma""]
+}
+```"
+qwen2.5:1.5b,0.4,20,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.18,1.176,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,21,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,4,False,True,markdown_fence,,41.64,1.734,58,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""birçok cihaz"", ""dijital ekran"", ""tarifi"", ""sözde dijital ekran""]
+}
+```"
+qwen2.5:1.5b,0.4,22,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.62,1.392,46,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""İngiltere"", ""Her Majesty's Theatreda"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.4,23,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,1,True,True,pure_json,,42.22,0.894,27,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,0.4,24,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.43,1.033,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.4,25,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.3,0.969,34,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""uma thurman"", ""film""]
+}"
+qwen2.5:1.5b,0.4,26,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.84,1.317,47,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sinepuan"", ""eğişik"", ""film"", ""evet""]
+}
+```"
+qwen2.5:1.5b,0.4,27,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,3,False,True,markdown_fence,,41.83,1.391,51,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""gazetesi"", ""İstanbul merkezli bas"", ""İzmir""]
+}
+```"
+qwen2.5:1.5b,0.4,28,urun,urun,False,True,False,olumlu,olumsuz,False,False,False,1,False,True,markdown_fence,,41.8,1.212,37,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""bir marka tostu""]
+}
+```"
+qwen2.5:1.5b,0.4,29,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.06,1.033,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""The Avengers"", ""Tara""]
+}
+```"
+qwen2.5:1.5b,0.4,30,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.36,1.022,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,31,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.0,1.2,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""hepsiburada.com""]
+}
+```"
+qwen2.5:1.5b,0.4,32,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.33,1.046,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,33,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,7,False,True,markdown_fence,,41.74,1.634,63,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""her şeyi"", ""gezegen"", ""bölge"", ""kalkın"", ""kendinden"", ""hesap"", ""sorar""]
+}
+```"
+qwen2.5:1.5b,0.4,34,urun,,False,False,False,olumsuz,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,40.8,6.507,256,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"", ""bir"","
+qwen2.5:1.5b,0.4,35,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.13,0.919,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.4,36,ansiklopedi,,False,False,False,notr,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,40.82,6.411,256,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"", ""kolo"
+qwen2.5:1.5b,0.4,37,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.27,2.23,77,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""801 modelini"", ""fiyata"", ""sorun yaşamadım"", ""iyiki varsınız"", ""çoook iyi bir makine"", ""sıfır sıkıntı tavsiye""]
+}
+```"
+qwen2.5:1.5b,0.4,38,urun,sinema,False,False,False,olumsuz,olumlu,False,False,False,2,False,True,markdown_fence,,42.19,1.106,34,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""su"", ""ev""]
+}
+```"
+qwen2.5:1.5b,0.4,39,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,3,False,True,markdown_fence,,41.83,1.499,56,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Internet adı sunucuları"", ""Domain Name Sistem"", ""Iletisim protokolü""]
+}
+```"
+qwen2.5:1.5b,0.4,40,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,4,False,True,markdown_fence,,41.86,1.414,48,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""olumsuz"", ""kapalı"", ""büyük"", ""işletme""]
+}
+```"
+qwen2.5:1.5b,0.4,41,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.94,1.312,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çekim gücü"", ""mutfakta sağ kolum""]
+}
+```"
+qwen2.5:1.5b,0.4,42,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.83,1.28,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""anime"", ""dialogues""]
+}
+```"
+qwen2.5:1.5b,0.4,43,urun,urun,False,True,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.67,2.01,75,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""piyasada çok taklidi olan bir ürün"", ""piyasada"", ""piyasada çok taklidi"", ""piyasada çok taklidi olan"", ""piyasada çok taklidi olan ürün""]
+}
+```"
+qwen2.5:1.5b,0.4,44,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,3,False,True,markdown_fence,,41.86,1.434,42,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""sipariş"", ""lastikler""]
+}
+```"
+qwen2.5:1.5b,0.4,45,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.68,1.578,51,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Muhammed Ali"", ""Vietnam savaşı"", ""ABD'nin Vietnam politikası""]
+}
+```"
+qwen2.5:1.5b,0.4,46,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,1,True,True,pure_json,,42.18,1.028,37,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Brezilya pasaportu""]
+}"
+qwen2.5:1.5b,0.4,47,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,2,True,True,pure_json,,42.33,0.898,33,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""elçi"", ""itaat""]
+}"
+qwen2.5:1.5b,0.4,48,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,12,True,True,pure_json,,41.35,2.617,96,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""berbatyazilan"", ""olumlu yorumlari"", ""mikatur"", ""seyahat acentesi"", ""tesise"", ""kandirip"", ""paranizi"", ""almalarina"", ""izin vermeyin"", ""tataliniz"", ""cehenneme"", ""doner""]
+}"
+qwen2.5:1.5b,0.4,49,urun,sinema,False,False,False,olumsuz,olumsuz,True,True,True,3,True,True,pure_json,,42.03,1.319,40,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""cihaz"", ""seans"", ""kisacasi""]
+}"
+qwen2.5:1.5b,0.4,50,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.22,0.989,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""duş"", ""orta""]
+}
+```"
+qwen2.5:1.5b,0.4,51,ansiklopedi,sinema,False,False,False,notr,notr,True,True,True,4,True,True,pure_json,,41.98,1.384,52,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Asalet sahibi"", ""zenginlerin"", ""yoksullara"", ""hizmet etmiştir""]
+}"
+qwen2.5:1.5b,0.4,52,urun,urun,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.08,1.153,37,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bisiklet"", ""ince pile""]
+}
+```"
+qwen2.5:1.5b,0.4,53,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.27,1.002,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,54,urun,urun,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.7,1.395,42,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""kullanım"", ""kullanıcı""]
+}
+```"
+qwen2.5:1.5b,0.4,55,urun,sinema,False,False,False,olumsuz,olumlu,False,False,False,6,False,True,markdown_fence,,41.51,2.001,70,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""davlumbaz"", ""çekişi"", ""bacasız"", ""kullanıma uygun"", ""alamayı düşünen"", ""serviste aradığınız zaman""]
+}
+```"
+qwen2.5:1.5b,0.4,56,urun,urun,False,True,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.55,1.691,64,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""arabam"", ""kesinlike"", ""tavsiye"", ""müzicı video"", ""hastalıktan"", ""kesinlik""]
+}
+```"
+qwen2.5:1.5b,0.4,57,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.31,1.067,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""hamur""]
+}
+```"
+qwen2.5:1.5b,0.4,58,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,2,True,True,pure_json,,42.37,0.942,34,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Romero"", ""filmin Devre""]
+}"
+qwen2.5:1.5b,0.4,59,urun,sinema,False,False,False,olumlu,olumsuz,False,False,False,2,False,True,markdown_fence,,42.29,1.047,37,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""mause"", ""bloody""]
+}
+```"
+qwen2.5:1.5b,0.4,60,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.52,0.908,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,61,sinema,sinema,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,41.86,1.285,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin sonu keşke böyle bitmeseydi""]
+}
+```"
+qwen2.5:1.5b,0.4,62,sinema,,False,False,False,olumsuz,,False,False,False,0,False,False,invalid_syntax,Geçersiz JSON sözdizimi,42.05,1.272,41,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""otelden"", ""memnun"", ""bile"")
+}"
+qwen2.5:1.5b,0.4,63,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,2,True,True,pure_json,,42.02,1.101,40,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Suriye Caddesi"", ""kazı""]
+}"
+qwen2.5:1.5b,0.4,64,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.27,0.988,36,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""oyuncu"", ""yönetmen""]
+}"
+qwen2.5:1.5b,0.4,65,urun,urun,False,True,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.85,1.461,52,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""fiyat"", ""tasarımda"", ""parmak izi"", ""hız"", ""telefon""]
+}
+```"
+qwen2.5:1.5b,0.4,66,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.26,1.128,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.4,67,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.22,0.949,34,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""sensör""]
+}
+```"
+qwen2.5:1.5b,0.4,68,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,0,True,True,pure_json,,42.48,0.826,28,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": []
+}"
+qwen2.5:1.5b,0.4,69,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.38,1.046,35,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""kamera""]
+}
+```"
+qwen2.5:1.5b,0.4,70,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.34,1.183,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ayagim""]
+}
+```"
+qwen2.5:1.5b,0.7,1,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.4,1.436,38,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""cevre"", ""kargoda""]
+}
+```"
+qwen2.5:1.5b,0.7,2,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,5,False,True,markdown_fence,,41.93,1.534,58,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""tavsiye"", ""fakat"", ""beklentimi"", ""cildime"", ""iyi""]
+}
+```"
+qwen2.5:1.5b,0.7,3,urun,ansiklopedi,False,False,False,olumsuz,olumlu,False,False,False,2,False,True,markdown_fence,,42.21,1.049,39,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""2 yaş"", ""3 yaş""]
+}
+```"
+qwen2.5:1.5b,0.7,4,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.13,1.013,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin""]
+}
+```"
+qwen2.5:1.5b,0.7,5,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,1,True,True,pure_json,,42.66,0.923,27,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,0.7,6,urun,urun,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.82,1.587,60,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çok beğendim ürün"", ""özelliğiniz için tavsiye ederim"", ""1 düz dikiş"", ""güzell""]
+}
+```"
+qwen2.5:1.5b,0.7,7,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.01,1.313,40,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""sinirler"", ""filmin sonu""]
+}
+```"
+qwen2.5:1.5b,0.7,8,ansiklopedi,sinema,False,False,False,notr,notr,True,True,True,2,True,True,pure_json,,42.13,1.018,37,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Trabzon"", ""Karadeniz Teknik Üniversitesi""]
+}"
+qwen2.5:1.5b,0.7,9,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.92,1.518,57,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""de nironun"", ""oyunculuğu"", ""doruğa"", ""dolu"", ""gerilim"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.7,10,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,2,True,True,pure_json,,42.17,1.14,43,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""büyük doğal gaz kaynakları"", ""keşfedilmiştir""]
+}"
+qwen2.5:1.5b,0.7,11,urun,sinema,False,False,False,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,42.48,0.936,28,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""tü""]
+}"
+qwen2.5:1.5b,0.7,12,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,41.68,1.567,59,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""en çok hayal kırıklığına uğradığım film"", ""duzisnin çoğu bölümünden bile vasattı""]
+}
+```"
+qwen2.5:1.5b,0.7,13,urun,sinema,False,False,False,olumlu,olumsuz,False,False,False,1,False,True,markdown_fence,,42.4,0.998,33,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""araba""]
+}
+```"
+qwen2.5:1.5b,0.7,14,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,0,False,True,markdown_fence,,42.52,0.917,32,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": []
+}
+```"
+qwen2.5:1.5b,0.7,15,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.31,0.897,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.7,16,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,42.06,1.191,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Denzel"", ""Russel Crowe"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.7,17,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,4,True,True,pure_json,,41.81,1.397,47,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""horlanırmı"", ""inannın"", ""verdiğim"", ""fiyasko""]
+}"
+qwen2.5:1.5b,0.7,18,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,4,True,True,pure_json,,41.44,1.733,54,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""9,5 yaşındaki oğlum"", ""fotolar"", ""şekil"", ""arka kapak""]
+}"
+qwen2.5:1.5b,0.7,19,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.22,0.992,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""kapaktaki kızlar""]
+}
+```"
+qwen2.5:1.5b,0.7,20,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.72,1.374,39,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""3 sinemalar"", ""arşiv""]
+}
+```"
+qwen2.5:1.5b,0.7,21,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,7,False,True,markdown_fence,,41.58,1.881,64,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""ekran"", ""çihaz"", ""pişmanlık"", ""tarifi"", ""sözde"", ""dijital"", ""ürün""]
+}
+```"
+qwen2.5:1.5b,0.7,22,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.57,1.92,68,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""İngiltere'de müzikalini izlemiştim"", ""Her Majesty's Theatreda"", ""yapmış olduğum en yararlı şey"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.7,23,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.22,0.996,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.7,24,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.38,1.035,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.7,25,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.36,0.995,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""uma thurman""]
+}
+```"
+qwen2.5:1.5b,0.7,26,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.17,1.116,39,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sinepuana 8"", ""film""]
+}
+```"
+qwen2.5:1.5b,0.7,27,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,2,True,True,pure_json,,42.05,1.266,46,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""gazetetarafı"", ""İstanbul merkezli basıncı""]
+}"
+qwen2.5:1.5b,0.7,28,urun,urun,True,True,True,olumlu,olumsuz,False,False,False,2,True,True,pure_json,,41.85,1.305,41,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""boşanma markası"", ""kağıt tostu""]
+}"
+qwen2.5:1.5b,0.7,29,ansiklopedi,film,False,False,False,notr,notr,True,True,True,5,True,True,pure_json,,41.96,1.19,43,"{
+  ""category"": ""film"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""The Avengers"", ""The Avengers"", ""The Avengers"", ""The Avengers"", ""The Avengers""]
+}"
+qwen2.5:1.5b,0.7,30,sinema,ansiklopedi,False,False,False,olumlu,notr,False,False,False,2,False,True,markdown_fence,,42.05,1.243,40,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""film"", ""düzgün film""]
+}
+```"
+qwen2.5:1.5b,0.7,31,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.02,1.273,38,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""hepsiburada.com""]
+}
+```"
+qwen2.5:1.5b,0.7,32,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,42.33,0.953,28,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,0.7,33,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,3,True,True,pure_json,,42.02,1.102,41,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""bölgesi"", ""gelecek"", ""kardeşim""]
+}"
+qwen2.5:1.5b,0.7,34,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,2,False,True,markdown_fence,,42.09,1.167,39,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""deri"", ""suni""]
+}
+```"
+qwen2.5:1.5b,0.7,35,urun,urun,False,True,False,olumlu,notr,False,False,False,4,False,True,markdown_fence,,41.97,1.28,47,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""sürede"", ""hakiki"", ""şık"", ""teşekkür""]
+}
+```"
+qwen2.5:1.5b,0.7,36,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,4,False,True,markdown_fence,,41.73,1.529,58,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""kolo"", ""kolo (Sırp dans)"", ""kolo (kolo ve kolo)"", ""kosova""]
+}
+```"
+qwen2.5:1.5b,0.7,37,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.7,1.695,55,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""801 türkese"", ""fiyatı"", ""modelini"", ""sorun"", ""düzen""]
+}
+```"
+qwen2.5:1.5b,0.7,38,urun,sinema,False,False,False,olumsuz,notr,False,False,False,2,False,True,markdown_fence,,41.83,1.354,44,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""sürekli su servisi"", ""ev kahvesi""]
+}
+```"
+qwen2.5:1.5b,0.7,39,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,2,False,True,markdown_fence,,41.91,1.225,45,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Internet adı sunucuları"", ""Domain Name System""]
+}
+```"
+qwen2.5:1.5b,0.7,40,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.06,1.106,34,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""olumsuz""]
+}
+```"
+qwen2.5:1.5b,0.7,41,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.88,1.574,53,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çekim gücü"", ""mutfakta sağ kolum"", ""herkeze tavsiye ederim""]
+}
+```"
+qwen2.5:1.5b,0.7,42,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.13,1.18,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""anime""]
+}
+```"
+qwen2.5:1.5b,0.7,43,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.13,1.16,40,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""piyasada çok taklidi olan bir ürün""]
+}
+```"
+qwen2.5:1.5b,0.7,44,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,1,False,True,markdown_fence,,42.08,1.163,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.7,45,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,5,True,True,pure_json,,41.73,1.648,54,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Muhammed Ali"", ""Vietnam savaşı"", ""Savaş filmi"", ""ABD"", ""Vietnam politikası""]
+}"
+qwen2.5:1.5b,0.7,46,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,5,True,True,pure_json,,41.94,1.419,53,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Brezilya"", ""pasaportu"", ""tarih"", ""verildiği"", ""süre""]
+}"
+qwen2.5:1.5b,0.7,47,ansiklopedi,ansiklopedi,True,True,True,notr,olumlu,False,False,False,5,True,True,pure_json,,41.87,1.361,52,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""elçi"", ""güvenlik"", ""itaat"", ""kendisine"", ""göndererek""]
+}"
+qwen2.5:1.5b,0.7,48,sinema,sinema,True,True,True,olumsuz,olumlu,False,False,False,5,True,True,pure_json,,41.87,1.61,55,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""olumlu yorumlari"", ""seyahat acentesi"", ""tesisi"", ""panarinizi"", ""cemilme""]
+}"
+qwen2.5:1.5b,0.7,49,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,5,False,True,markdown_fence,,41.57,1.742,57,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""cihaz"", ""seans"", ""uzerinden"", ""killanma"", ""kisacasi""]
+}
+```"
+qwen2.5:1.5b,0.7,50,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.13,1.077,39,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""duş başlığı"", ""hortum""]
+}
+```"
+qwen2.5:1.5b,0.7,51,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,4,False,True,markdown_fence,,41.93,1.349,50,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sahibi"", ""zenginler"", ""yoksullar"", ""hizmet""]
+}
+```"
+qwen2.5:1.5b,0.7,52,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.32,1.055,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bisiklet""]
+}
+```"
+qwen2.5:1.5b,0.7,53,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.71,1.758,62,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [
+    ""zeka"",
+    ""film"",
+    ""bizi"",
+    ""izleme"",
+    ""bizi"",
+    ""izleme""
+  ]
+}
+```"
+qwen2.5:1.5b,0.7,54,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.26,1.151,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,0.7,55,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,2,False,True,markdown_fence,,41.62,1.662,56,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""çekişi ve bacasız kullanıma uygun"", ""aradığınız zaman hemen geliyor""]
+}
+```"
+qwen2.5:1.5b,0.7,56,urun,urun,False,True,False,olumlu,olumlu,False,True,False,6,False,True,markdown_fence,,41.62,1.591,60,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""arabam"", ""kesinlik"", ""tavsiye"", ""muzik"", ""video"", ""hastalıktır""]
+}
+```"
+qwen2.5:1.5b,0.7,57,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,5,False,True,markdown_fence,,41.72,1.749,61,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""yorumları okuduğumda"", ""hamur"", ""5 adet"", ""almıştım"", ""iade edeceğim""]
+}
+```"
+qwen2.5:1.5b,0.7,58,ansiklopedi,sinema,False,False,False,notr,notr,True,True,True,2,True,True,pure_json,,41.94,0.929,33,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": ["" Romero"", ""Filmin Devre""]
+}"
+qwen2.5:1.5b,0.7,59,urun,ansiklopedi,False,False,False,olumlu,olumsuz,False,False,False,6,False,True,markdown_fence,,41.67,1.628,61,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""mause"", ""v3"", ""gun 3"", ""bloody"", ""en iyi mausu"", ""bana gore""]
+}
+```"
+qwen2.5:1.5b,0.7,60,sinema,film,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.35,0.886,30,"```json
+{
+  ""category"": ""film"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,0.7,61,sinema,sinema,False,True,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,41.5,1.051,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""filmin""]
+}
+```"
+qwen2.5:1.5b,0.7,62,sinema,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,3,True,True,pure_json,,40.89,1.734,60,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""otelden memnunlu olmama"", ""yalan söylüyor"", ""turistlere ilgi anlayış sevgi""]
+}"
+qwen2.5:1.5b,0.7,63,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,2,False,True,markdown_fence,,42.11,1.171,43,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Suriye Caddesi"", ""kaz""]
+}
+```"
+qwen2.5:1.5b,0.7,64,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.24,0.99,36,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""oyuncu"", ""yönetmen""]
+}"
+qwen2.5:1.5b,0.7,65,urun,urun,False,True,False,olumlu,olumlu,False,True,False,5,False,True,markdown_fence,,41.84,1.414,50,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""fiyat"", ""tasarımda"", ""işleri"", ""hız"", ""telefon""]
+}
+```"
+qwen2.5:1.5b,0.7,66,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,2,False,True,markdown_fence,,42.05,1.322,40,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""Dublajlı"", ""Köpek""]
+}
+```"
+qwen2.5:1.5b,0.7,67,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.26,0.951,34,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""sensör""]
+}
+```"
+qwen2.5:1.5b,0.7,68,ansiklopedi,ansiklopedi,False,True,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.11,1.162,42,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""yüksek sesler"", ""ışık""]
+}
+```"
+qwen2.5:1.5b,0.7,69,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,0,False,True,markdown_fence,,42.35,0.973,32,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": []
+}
+```"
+qwen2.5:1.5b,0.7,70,urun,urun,False,True,False,olumsuz,olumlu,False,False,False,2,False,True,markdown_fence,,41.55,1.707,54,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ayagim 42 numara"", ""ayagimi sokarken daha cok sakatlanacaktim""]
+}
+```"
+qwen2.5:1.5b,1.0,1,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,4,False,True,markdown_fence,,41.22,1.826,54,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""cevresi"", ""tekrar"", ""kaldırma"", ""kaldırıcı""]
+}
+```"
+qwen2.5:1.5b,1.0,2,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,3,True,True,pure_json,,42.03,1.229,44,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""tavsiye"", ""beklenti"", ""cildim""]
+}"
+qwen2.5:1.5b,1.0,3,urun,sinema,False,False,False,olumsuz,notr,False,False,False,2,True,True,pure_json,,42.45,0.881,32,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""2 yaş"", ""3 yaş""]
+}"
+qwen2.5:1.5b,1.0,4,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.09,1.095,35,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin son anları""]
+}
+```"
+qwen2.5:1.5b,1.0,5,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,4,True,True,pure_json,,41.92,1.438,48,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bir film"", ""sahnesi"", ""kaza sahnesi"", ""filmini seyre""]
+}"
+qwen2.5:1.5b,1.0,6,urun,urun,True,True,True,olumlu,olumlu,True,True,True,4,True,True,pure_json,,41.9,1.107,40,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""ürün"", ""ürün"", ""ürün""]
+}"
+qwen2.5:1.5b,1.0,7,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,42.32,0.991,28,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,1.0,8,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.09,1.113,41,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Trabzon"", ""Karadeniz Teknik Üniversitesi""]
+}
+```"
+qwen2.5:1.5b,1.0,9,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.95,1.255,46,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""de niron"", ""oyunculuğu"", ""gerilim filmi""]
+}
+```"
+qwen2.5:1.5b,1.0,10,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,2,False,True,markdown_fence,,42.2,1.211,46,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""büyük doğal gaz kaynakları"", ""kesfedilmiştir""]
+}
+```"
+qwen2.5:1.5b,1.0,11,urun,sinema,False,False,False,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.35,1.052,33,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""mümkün"", ""ev""]
+}"
+qwen2.5:1.5b,1.0,12,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,41.18,0.831,28,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,1.0,13,urun,ansiklopedi,False,False,False,olumlu,olumsuz,False,False,False,1,False,True,markdown_fence,,41.93,1.056,36,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""araba""]
+}
+```"
+qwen2.5:1.5b,1.0,14,urun,sinema,False,False,False,olumlu,notr,False,False,False,1,False,True,markdown_fence,,42.15,0.928,33,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""günlük""]
+}
+```"
+qwen2.5:1.5b,1.0,15,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.39,0.919,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bilge""]
+}
+```"
+qwen2.5:1.5b,1.0,16,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,41.52,0.938,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,1.0,17,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,42.31,0.935,28,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}"
+qwen2.5:1.5b,1.0,18,urun,sinema,False,False,False,olumsuz,olumsuz,False,True,False,12,False,True,markdown_fence,,40.98,3.04,107,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""9,5 yaş"", ""oluduğunu"", ""beni beğenme"", ""5 megapiksel"", ""kalitesiz"", ""arka kapak adı"", ""plastikten"", ""gezinti"", ""kelime tercihleri"", ""şarjı"", ""çözünürlük"", ""hassasiyet""]
+}
+```"
+qwen2.5:1.5b,1.0,19,sinema,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.48,1.004,37,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""kızlar""]
+}
+```"
+qwen2.5:1.5b,1.0,20,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.24,1.198,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bir film""]
+}
+```"
+qwen2.5:1.5b,1.0,21,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,8,True,True,pure_json,,41.46,1.967,67,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""birleşik devlet"", ""tarifi"", ""ekran"", ""pişman"", ""zaten"", ""üretmen"", ""üretimi"", ""yetersiz""]
+}"
+qwen2.5:1.5b,1.0,22,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,4,True,True,pure_json,,41.89,1.35,44,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""İngiltere"", ""muzik"", ""Theatreda"", ""film""]
+}"
+qwen2.5:1.5b,1.0,23,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.95,1.231,41,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Film name"", ""6 dalda oscar adayı""]
+}
+```"
+qwen2.5:1.5b,1.0,24,urun,urun,False,True,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,42.24,1.033,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,1.0,25,sinema,sinema,True,True,True,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.23,1.069,38,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""uma thurman"", ""benden vasat oy""]
+}"
+qwen2.5:1.5b,1.0,26,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,2,True,True,pure_json,,42.4,0.969,33,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sinepuana"", ""film""]
+}"
+qwen2.5:1.5b,1.0,27,ansiklopedi,ansiklopedi,False,True,False,notr,notr,False,True,False,3,False,True,markdown_fence,,42.05,1.288,47,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""gazetecim"", ""İzmir"", ""İstanbul""]
+}
+```"
+qwen2.5:1.5b,1.0,28,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.28,1.108,33,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çalışma""]
+}
+```"
+qwen2.5:1.5b,1.0,29,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.18,1.017,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""The Avengers"", ""Tara""]
+}
+```"
+qwen2.5:1.5b,1.0,30,sinema,ansiklopedi,False,False,False,olumlu,notr,False,False,False,4,False,True,markdown_fence,,41.81,1.51,51,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""perfect.benim"", ""doldu"", ""helal"", ""izlenmeye""]
+}
+```"
+qwen2.5:1.5b,1.0,31,urun,ansiklopedi,False,False,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,41.98,1.367,42,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [
+    ""hepsiburada.com""
+  ]
+}
+```"
+qwen2.5:1.5b,1.0,32,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,41.73,1.084,33,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""bir film""]
+}
+```"
+qwen2.5:1.5b,1.0,33,ansiklopedi,sinema,False,False,False,notr,olumsuz,False,False,False,2,False,True,markdown_fence,,41.97,1.032,38,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""geçiş"", ""kesim""]
+}
+```"
+qwen2.5:1.5b,1.0,34,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,42.12,1.087,36,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""birikim""]
+}
+```"
+qwen2.5:1.5b,1.0,35,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.25,0.948,32,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün""]
+}
+```"
+qwen2.5:1.5b,1.0,36,ansiklopedi,ansiklopedi,True,True,True,notr,olumlu,False,False,False,3,True,True,pure_json,,42.02,1.141,42,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Sırp dans"", ""kolo"", ""Kosova""]
+}"
+qwen2.5:1.5b,1.0,37,urun,urun,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.08,1.264,38,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""801 tk a+ modelini""]
+}
+```"
+qwen2.5:1.5b,1.0,38,urun,sinema,False,False,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,42.49,1.038,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""su""]
+}
+```"
+qwen2.5:1.5b,1.0,39,ansiklopedi,urun,False,False,False,notr,olumlu,False,False,False,2,False,True,markdown_fence,,42.18,1.053,38,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Internet adresi"", ""Domain Name sistem""]
+}
+```"
+qwen2.5:1.5b,1.0,40,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,1,True,True,pure_json,,42.22,1.045,33,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""büyüm""]
+}"
+qwen2.5:1.5b,1.0,41,urun,sinema,False,False,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.9,1.31,42,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""çekim gücü"", ""mutfak"", ""herkes""]
+}
+```"
+qwen2.5:1.5b,1.0,42,sinema,sinema,True,True,True,olumlu,olumlu,True,True,True,2,True,True,pure_json,,42.06,1.181,31,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""anime"", ""dialogue""]
+}"
+qwen2.5:1.5b,1.0,43,urun,urun,True,True,True,olumlu,olumlu,True,True,True,1,True,True,pure_json,,42.58,0.869,28,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bir ürün""]
+}"
+qwen2.5:1.5b,1.0,44,urun,urun,True,True,True,olumsuz,olumlu,False,False,False,4,True,True,pure_json,,41.36,2.085,69,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""siparişi verdikten sonra ertesi gün geldi"", ""kitapçıklarında türkçe açıklama yok"", ""uzun lafın kısası alınabilir""]
+}"
+qwen2.5:1.5b,1.0,45,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,41.79,1.429,45,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""Muhammed Ali"", ""Vietnam savaşı"", ""ABD""]
+}
+```"
+qwen2.5:1.5b,1.0,46,ansiklopedi,sinema,False,False,False,notr,notr,False,True,False,2,False,True,markdown_fence,,41.92,1.177,43,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""Brezilya pasaportu"", ""5 yıl süre""]
+}
+```"
+qwen2.5:1.5b,1.0,47,ansiklopedi,ansiklopedi,True,True,True,notr,notr,True,True,True,5,True,True,pure_json,,42.08,1.293,49,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""bir"", ""elçi"", ""kendisine"", ""itaat"", ""ettirmesi""]
+}"
+qwen2.5:1.5b,1.0,48,sinema,ansiklopedi,False,False,False,olumsuz,olumlu,False,False,False,0,True,True,pure_json,,42.41,0.961,28,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": []
+}"
+qwen2.5:1.5b,1.0,49,urun,ansiklopedi,False,False,False,olumsuz,notr,False,False,False,7,False,True,markdown_fence,,41.28,2.064,70,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""kullanıcının"", ""kisacısının"", ""yayınlanan"", ""kampanyası"", ""kisacasını"", ""günde"", ""gün""]
+}
+```"
+qwen2.5:1.5b,1.0,50,urun,ansiklopedi,False,False,False,olumsuz,olumsuz,False,True,False,3,False,True,markdown_fence,,42.08,1.254,47,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""duş başlığı"", ""kalitesiz"", ""duş""]
+}
+```"
+qwen2.5:1.5b,1.0,51,ansiklopedi,sinema,False,False,False,notr,notr,True,True,True,1,True,True,pure_json,,42.14,1.166,43,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""zenginlerin yardımıyla yoksullara hizmet etmiştir""]
+}"
+qwen2.5:1.5b,1.0,52,urun,urun,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,42.26,1.151,37,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""bisiklet"", ""ince pile""]
+}
+```"
+qwen2.5:1.5b,1.0,53,sinema,sinema,True,True,True,olumlu,notr,False,False,False,3,True,True,pure_json,,42.23,1.146,37,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""zeka"", ""sikir"", ""büm""]
+}"
+qwen2.5:1.5b,1.0,54,urun,urun,False,True,False,olumlu,olumlu,False,True,False,2,False,True,markdown_fence,,41.97,1.275,37,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""ürün"", ""kullanım""]
+}
+```"
+qwen2.5:1.5b,1.0,55,urun,urun,True,True,True,olumsuz,olumlu,False,False,False,7,True,True,pure_json,,41.78,1.799,62,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""davlumbaz"", ""çekişi"", ""bacasız"", ""prodüksiyon"", ""alamayı"", ""takvim"", ""servis""]
+}"
+qwen2.5:1.5b,1.0,56,urun,urun,False,True,False,olumlu,olumlu,False,True,False,3,False,True,markdown_fence,,42.15,1.148,42,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""arabam"", ""müzik video"", ""harika""]
+}
+```"
+qwen2.5:1.5b,1.0,57,urun,urun,True,True,True,olumsuz,olumsuz,True,True,True,3,True,True,pure_json,,41.84,1.507,51,"{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""yorumları okuduğumda alınması gerekli bir ürün"", ""hamur"", ""5 adet""]
+}"
+qwen2.5:1.5b,1.0,58,ansiklopedi,sinema,False,False,False,notr,olumlu,False,False,False,5,True,True,pure_json,,41.96,1.265,47,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""filmin"", ""Devre"", ""Romero"", ""görüntüleri"", ""renk""]
+}"
+qwen2.5:1.5b,1.0,59,urun,sinema,False,False,False,olumlu,olumlu,True,True,True,2,True,True,pure_json,,42.34,0.918,32,"{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""mause"", ""bloody""]
+}"
+qwen2.5:1.5b,1.0,60,sinema,sinema,False,True,False,olumlu,olumlu,False,True,False,1,False,True,markdown_fence,,42.29,0.913,31,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,1.0,61,sinema,sinema,False,True,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,41.96,1.157,36,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""grilim filmleri""]
+}
+```"
+qwen2.5:1.5b,1.0,62,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,3,False,True,markdown_fence,,41.97,1.291,43,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""otelden"", ""turistlere"", ""oğlu""]
+}
+```"
+qwen2.5:1.5b,1.0,63,ansiklopedi,ansiklopedi,False,True,False,notr,olumsuz,False,False,False,3,False,True,markdown_fence,,41.75,1.563,59,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""Bununla ilgili blokların"", ""Suriye Caddesi"", ""kazılar""]
+}
+```"
+qwen2.5:1.5b,1.0,64,sinema,ansiklopedi,False,False,False,olumsuz,olumsuz,True,True,True,2,True,True,pure_json,,42.06,1.088,40,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""oyuncu"", ""yönetmenlik""]
+}"
+qwen2.5:1.5b,1.0,65,urun,urun,False,True,False,olumlu,notr,False,False,False,3,False,True,markdown_fence,,41.69,1.586,57,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""fiyata muthis şarj"", ""tasarımda iyi parmak izi çalışması"", ""telefon""]
+}
+```"
+qwen2.5:1.5b,1.0,66,sinema,sinema,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,42.43,1.124,32,"```json
+{
+  ""category"": ""sinema"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""film""]
+}
+```"
+qwen2.5:1.5b,1.0,67,urun,urun,False,True,False,olumsuz,olumsuz,False,True,False,1,False,True,markdown_fence,,40.87,0.981,34,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""olumsuz"",
+  ""entities"": [""sensör""]
+}
+```"
+qwen2.5:1.5b,1.0,68,ansiklopedi,ansiklopedi,True,True,True,notr,olumlu,False,False,False,2,True,True,pure_json,,42.26,0.994,35,"{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""olumlu"",
+  ""entities"": [""sesler"", ""ışık""]
+}"
+qwen2.5:1.5b,1.0,69,urun,ansiklopedi,False,False,False,olumlu,notr,False,False,False,4,False,True,markdown_fence,,41.79,1.488,53,"```json
+{
+  ""category"": ""ansiklopedi"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""kamerası hariç"", ""oyunlar"", ""donma"", ""takılma""]
+}
+```"
+qwen2.5:1.5b,1.0,70,urun,urun,False,True,False,olumsuz,notr,False,False,False,1,False,True,markdown_fence,,41.8,1.316,38,"```json
+{
+  ""category"": ""urun"",
+  ""sentiment"": ""notr"",
+  ""entities"": [""ayagim 42 numara""]
+}
+```"

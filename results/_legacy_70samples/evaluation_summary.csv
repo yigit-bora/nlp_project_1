@@ -1,0 +1,5 @@
+model,temperature,total_samples,pure_json_rate,syntax_valid_rate,strict_category_accuracy,parsed_category_accuracy,strict_sentiment_accuracy,parsed_sentiment_accuracy,overall_category_accuracy,overall_sentiment_accuracy,category_accuracy,sentiment_accuracy,avg_entities_per_sample,mean_tps
+qwen2.5:1.5b,0.1,70,5.71,97.14,2.86,63.24,1.43,70.59,2.86,1.43,2.86,1.43,2.73,41.18
+qwen2.5:1.5b,0.4,70,17.14,94.29,11.43,63.64,12.86,72.73,11.43,12.86,11.43,12.86,2.49,41.98
+qwen2.5:1.5b,0.7,70,25.71,100.0,14.29,60.0,18.57,71.43,14.29,18.57,14.29,18.57,2.64,41.97
+qwen2.5:1.5b,1.0,70,38.57,100.0,24.29,60.0,27.14,65.71,24.29,27.14,24.29,27.14,2.44,42.0
