@@ -1,0 +1,14 @@
+# Python & Virtual Environment
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Legacy 70-sample initial test artifacts
+results/_legacy_70samples/
+reports/figures/_legacy_70samples/

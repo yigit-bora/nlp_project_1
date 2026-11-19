@@ -1,0 +1,1627 @@
+[
+  {
+    "id": 1,
+    "text": "daha önce cevremden alıyordum. kısa sürede temizlemem gerekıyordu bukadar iyi olacağı aklıma gelmezdi. tekrar tekrar bakıyorum temizleyeyim diye ancak okadar iyi emiyorkı yorulmuyorsunuz. üstelik birden fazla kedim var. kisacasi çok çok tesekkür ederi̇m. kargoda bedavaydı. daha ne di̇yeyi̇m mükemmelsi̇ni̇z.......",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "kargo"
+    ]
+  },
+  {
+    "id": 2,
+    "text": "tavsiye üzerine kullandım fakat beklentimi karşılamadı cildime iyi gelmedi",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "cilt"
+    ]
+  },
+  {
+    "id": 3,
+    "text": "2 yaş için fena sayılmaz ama 3 yaş için ufak kalıyor ve dik.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "koltuk"
+    ]
+  },
+  {
+    "id": 4,
+    "text": "izleyipte unutamadığım en güzel filmlerin başında geliyor.özelliklede filmin son anları dikkatle dinlerseniz yaşam için gerekli tüyoları weeriyor zaten...",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 5,
+    "text": "filim konu olarak güzel bir filimdi bazı arkadaşlar beğenmesede güzel bir filimdi filimin başındaki o kaza sahnesini daha unutmuyorum çok güzel yapılmış ben bu filimi daha önce nedne seyretmedim merak ediyorum",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 6,
+    "text": "çok beğendim ürün çok güzel tavsiye ederim 1 düz dikiş yapılıyor çok guzell",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "dikiş makinesi"
+    ]
+  },
+  {
+    "id": 7,
+    "text": "çok boş film,sinirlerim fazla bozulmadı,öyle geren bir sahnede yok zaten atı üstü 3-4 kişi öldü oda saçma sapan ancak kızın oyunculuğunu beyendim,filmin sonuna gelince ancak bu kadar saçma biterdi.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Trabzon’da Karadeniz Teknik Üniversitesi kurulmasında önemli rol oynadı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Trabzon",
+      "Karadeniz Teknik Üniversitesi"
+    ]
+  },
+  {
+    "id": 9,
+    "text": "de nironun oyunculuğu ile doruğa ulaşmış mükemmel bir gerilim filmi 10/9",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "De Niro"
+    ]
+  },
+  {
+    "id": 10,
+    "text": "O zamandan beri büyük doğal gaz kaynakları da keşfedilmiştir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "doğal gaz"
+    ]
+  },
+  {
+    "id": 11,
+    "text": "ürünü tavsiye üzerine almak istedim, ancak hayal kırıklığına uğradım, ütü daha ilk dakikalarda çalışırken kendini emniyete alıyor ve çalışmıyor. memnun kalmadım.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "ütü"
+    ]
+  },
+  {
+    "id": 12,
+    "text": "En çok hayal kırıklığına uğradığım film. Dizisinin çoğu bölümünden bile vasattı.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "dizi",
+      "film"
+    ]
+  },
+  {
+    "id": 13,
+    "text": "araba guzel kullanıslı fakat oturunca cocuk asagı kayıyor dık pozısyonda oturamıyor tek sıkıntısı bu",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "bebek arabası"
+    ]
+  },
+  {
+    "id": 14,
+    "text": "sötlendiği gibi kokusu muhteşem yıllardır kullandığımız ürün fazla söze gerek yok..",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "parfüm"
+    ]
+  },
+  {
+    "id": 15,
+    "text": "bir sinema salonunda izlediğiniz zaman salondaki herkesle beraber arkadaşmışsınız gibi güldüren samimi bir film",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "sinema salonu"
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Denzel döktürmüş her zamanki gibi.Russel Crowe'un karakterinin hikayesi filmde olmasaymışda olurmuş...",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "Denzel",
+      "Russel Crowe"
+    ]
+  },
+  {
+    "id": 17,
+    "text": "bir filmde horlanırmı evet horladım inannın ayıp verdiğim paraya yazık yok kıyamet filmmiymiş ne alakası var yarından sonra gibi dediler diye gittim fiyasko",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "Yarından Sonra"
+    ]
+  },
+  {
+    "id": 18,
+    "text": "9,5 yaşındaki oğluma aldım. o beğendi, ancak ben beğenmedim. 5 megapikseli doğru değil. fotolar kalitesiz. arka kapak adi plastikten. menülerde gezinti karmaşık, çevirilerde kelime tercihleri kötü. şarjı da az gidiyor. ekran çözünürlüğü düşük ve cansız. dokunmatik hassasiyeti az.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "telefon"
+    ]
+  },
+  {
+    "id": 19,
+    "text": "sadece şu kapaktaki kızlar için izledim. genele bakarsak kötü :(",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Şimdiye kadar beni saran 2. bir film izlemedim (3 seri için yazıyorum)Tek kelimeyle muhteşemdi.Tarzı olanların olmayanların mutlaka ama mutlaka arşivinde olaması geren bir 3'lü.Ve de şundan çok eminim bu 3'lü yıllar sonra dahi tazeliğini koruyacaktır. Tüm sinemaseverlere selamlar...",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 21,
+    "text": "oldukça kötü bir cihaz eksik özellikleri ile düzgün çalışmayan sözde dijital ekranı ile aldığıma pişman olduğum berbat bişey tarifi yok tavsiye olunmaz kımse yaklaşmasın bencee zaten ürün açıklaması bile yetersiz belliydi böyle çıkıcağı.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "cihaz"
+    ]
+  },
+  {
+    "id": 22,
+    "text": "İngiltere'de müzikalini izlemiştim Her Majesty's Theatreda,hayatım boyunca kendim ve kültür adına için yapmış olduğum en yararlı şey olduğuna inanıyorum.Umarım film de güzel olur.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "İngiltere",
+      "Her Majesty's Theatre"
+    ]
+  },
+  {
+    "id": 23,
+    "text": "hayatımda izlediim en güsel sinema filmiydi...ben kendini filme bu kadar baglayan bi yapıt görmedim..herkes gitsin..zaten 6 dalda oscar adayı;)",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "Oscar"
+    ]
+  },
+  {
+    "id": 24,
+    "text": "bu güne kadar çok farklı matkap markaları da kullanmış biri olarak, kullandıklarım arasında üst sıralara koyabileceğim kalitede bir ürün. ürün ile ilgili bir sorun yaşamayacağınızı düşünüyorum.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "matkap"
+    ]
+  },
+  {
+    "id": 25,
+    "text": "uma thurman ın nasıl bu kadar kötü bi filmde rol aldığını anlamış deilim bu film benden vasat oy aldı",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "Uma Thurman"
+    ]
+  },
+  {
+    "id": 26,
+    "text": "sinepuana 8 berdim. eğişik bir film nee giyor ne de eğlendiriyor. ama iyi mi? evet iyi.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 27,
+    "text": "Gazetenin İstanbul merkezli basının aksine İzmir gibi bir şehirde çıkması dikkat çeken bir konudur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "İstanbul",
+      "İzmir"
+    ]
+  },
+  {
+    "id": 28,
+    "text": "ürünün çok süper kalite bi durumu yok ama çok çabuk ısınıyor ve çok ta güzel tost yapıyor. tost amaçlı alacaksanız boşa pahalı markalara para vermeye gerek yok kağıt gibi tost yapıyor varsın çok lüks olmasın",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "tost makinesi"
+    ]
+  },
+  {
+    "id": 29,
+    "text": "İngiltere yapımı \"The Avengers\" adlı televizyon dizisinde canlandırdığı Tara rolüyle bilinir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "İngiltere",
+      "The Avengers",
+      "Tara"
+    ]
+  },
+  {
+    "id": 30,
+    "text": "uzun zamandan beri böle bir filme hasret kalmiştık tek kelimeyle perfect.benim kadar duygusuz bi insan yoktur ama benim bu filmde gözlerim doldu helal olsun gerçekten izlenmeye değer bir film",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 31,
+    "text": "çok güzel bir roman setini neredeyse üçte bir fiatına bizlere sunan hepsiburada.com sitesine çok teşekkür ederim, siparişimiz çok kısa bir sürede sağlam ve hızlı bir şekilde tarafımıza gönderildi, teşekkürler hepsiburada.com, başarılı çalışmalarınızın devamını diliyorum sevgi ve saygılarımla...",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "roman",
+      "hepsiburada.com"
+    ]
+  },
+  {
+    "id": 32,
+    "text": "Heyecanla çıkmasını beklediğim bi filmdi.İzledikten sonra üzülerek belirtiyorum ki hayal kırıklığı yaşadım.Çok basit bi film olduğunu düşünüyorum.Daha iyi yapılabilirdi...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 33,
+    "text": "Her şeyi olduğu gibi bırakarak bölgesine döner ve kardeşinden hesap sorar .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 34,
+    "text": "2 çift istedim biri gerçek deri biri suni deri bi teki de diğerinden küçük malsef .. deri olan da çok sert bedenleri biraz küçük bi beden büyük alin",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "ayakkabı"
+    ]
+  },
+  {
+    "id": 35,
+    "text": "vadedilen süreden önce gönderdiniz. ayrıca ürün hakiki deri ve çok şık.teşekkürler...",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "deri ceket"
+    ]
+  },
+  {
+    "id": 36,
+    "text": "Sırp geleneksel dans \"kolo\"larından bazıları Kosova kökenlidir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Sırp",
+      "Kosova",
+      "kolo"
+    ]
+  },
+  {
+    "id": 37,
+    "text": "6 ay önce aldım aslında 801 tk a+ modelini istemiştim ellerinde olmadığıdan aynı fiyata bunu gönderdiler iyikide göndermişler çok teşekkür ederim zaten buradan aldığım hiçbir üründe sorun yaşamadım iyiki varsınız çoook iyi bir makine sıfır sıkıntı tavsiye ederim",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "801 tk a+"
+    ]
+  },
+  {
+    "id": 38,
+    "text": "ürünü aldım normal su sıcaklıgı 28 derece iken derece 31 gösteriyor suyun için çektiğimdede ev derecesinden 2 derece az gösteriyor. bence önermem fiyatı ucuz diye alcagınıza kaliteli bişey alın",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "termometre"
+    ]
+  },
+  {
+    "id": 39,
+    "text": "İnternet adı sunucuları ve iletişim protokolü Domain Name Sistemini etkin kılar .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Domain Name Sistemi",
+      "İnternet"
+    ]
+  },
+  {
+    "id": 40,
+    "text": "ilanınızda farklı iki kitapmış gibi sunuyor ve öyle satıyorsunuz oysakı aynı kıtabın içinde iki öykü , bu şekilde bol bol müşteri kaybedersiniz aynen devam edin....",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "kitap"
+    ]
+  },
+  {
+    "id": 41,
+    "text": "hemen kullanmaya başladım,çekim gücü gayet iyi,hele mutfakta sağ kolum oldu.sesi biraz fazla ama yine de çok memnun kaldım.fiyatından çok daha iyi performans gösteriyor.herkese tavsiye ederim..",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "süpürge"
+    ]
+  },
+  {
+    "id": 42,
+    "text": "Valla ne diyim.Süper bi anime .Çok komik ve çok eğlenceli,O dialogları kopardı beni. Sid:İyi denemeydi ama yemezler. Diego:Sen bana yalancı mı diyorsun? Sid:Ben öyle demedim. Diego:Ama düşündün! Sid:Bu kediyi hiç sevmedim.Zihnimi okuyor!!! :::))))))))))))))))))))))))))))))))))))))",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "Sid",
+      "Diego"
+    ]
+  },
+  {
+    "id": 43,
+    "text": "piyasada çok taklidi olan bir ürün olarak düşündüğünüz de ürün orijinal ve gayet başarılı. tavsiye ederim. teşekkürler hepsi burada.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "hepsiburada"
+    ]
+  },
+  {
+    "id": 44,
+    "text": "ürün,siparişi verdikten sonra ertesi gün geldi.mekanizma olarak çok basit.eskiden sapan yaparken kullandığımız lastiklerin gelişmiş versiyonu sizi bir hayli yoruyor.i̇thal mal olduğu için kitapçıklarında türkçe açıklama yok denecek kadar az.uzun lafın kısası alınabilir bir ürün...",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "sapan"
+    ]
+  },
+  {
+    "id": 45,
+    "text": "Filmde fon teşkil eden Muhammed Ali ve Vietnam savaşı haberleri çok hoşuma gitti.Bir de bu filmin bir özelliği daha var:--Savaş filmi olmamasına rağmen bir çok savaş filminden daha şiddetli bir biçimde ABD’nin Vietnam politikasını eleştiriyor.Bu filmin en büyük kozu.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "Muhammed Ali",
+      "Vietnam",
+      "ABD"
+    ]
+  },
+  {
+    "id": 46,
+    "text": "Brezilya pasaportu verildiği tarihten itibaren beş yıl süreyle geçerlidir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Brezilya",
+      "pasaport"
+    ]
+  },
+  {
+    "id": 47,
+    "text": "Bu nedenle bir elçi göndererek kendisine itaat etmesini istedi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 48,
+    "text": "berbatyazilan tum olumlu yorumlari mikatur seyahat acentesi yazmistir sakin guvenipte gitmeyin tesise sizi kandirip paranizi almalarina izin vermeyin sonra tatiliniz cehenneme doner",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "mikatur"
+    ]
+  },
+  {
+    "id": 49,
+    "text": "yaklasik 4 ay once cihazi aldim.6 seans uyguladim.işimden dolayi yarim biraktim.uzerinden 2.5 ay gecti ve ilk halinden daha cok killanma mevcut.kisacasi hic memnun kalmadim.bosuna vermisim onca parayi.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "cihaz",
+      "lazer"
+    ]
+  },
+  {
+    "id": 50,
+    "text": "duş başlığı kalitesiz ve kötü görünüyor. hortum ve başlıkda uymadı",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "duş başlığı",
+      "hortum"
+    ]
+  },
+  {
+    "id": 51,
+    "text": "Asalet sahibi zenginlerin yardımıyla yoksullara hizmet etmiştir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 52,
+    "text": "ürün, eğer profesyonel olarak bisiklet kullanmıyorsanız işinizi fazlasıyla görecektir.6 adet ince pile ihtiyacınız olacak. uygun fiyat tavsiye ediyorum.teslimat süreside çok kısa.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "bisiklet",
+      "pil"
+    ]
+  },
+  {
+    "id": 53,
+    "text": "bu filmdeki zeka bnce süper..sıkılmadan izliyeceginizz ve bumi tuaklarinin naer nasıl karsınıza cıkacagını bılemıyosunuz..mutlaka izleyin...",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 54,
+    "text": "ürünü buradaki̇ yorumlari i̇nceleyerek aldim. gördüm ki̇ gayet i̇yi̇ bi̇r ürün. uzun süredi̇r kullaniyorum. kullanimi kolay ve rahat. ben memnunum. kesi̇nli̇kle tavsi̇ye ederi̇m.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "ürün"
+    ]
+  },
+  {
+    "id": 55,
+    "text": "çok para vermeden işinizi görebileceğiniz bir davlumbaz.çekişi ve bacasız kullanıma uygun bir ürün.alamayı düşünenlere tavsiye ederim.serviste aradığınız zaman hemen geliyor.saygılarımla.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "davlumbaz"
+    ]
+  },
+  {
+    "id": 56,
+    "text": "harika ürün arabamda kullanıyorum kesinlike tavsiye ederim müzik video hızlı aktarımı ve hatasız çalışma",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "araba",
+      "usb"
+    ]
+  },
+  {
+    "id": 57,
+    "text": "yorumları okuduğumda alınması gerekli bir ürün olarak düşünmüştüm. ancak hamur hiç iyi değil. kum gibi. 5 adet almıştım açılmamış olan 4 adeti iade edeceğim.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "oyun hamuru"
+    ]
+  },
+  {
+    "id": 58,
+    "text": "Filmin Devre arasında Romero mevcut görüntüleri düzenlemesine başlaması için fırsat oldu .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Romero",
+      "film"
+    ]
+  },
+  {
+    "id": 59,
+    "text": "çok guzel bi mause daha once v3 gun 3 kullanmıstım ama bu bloody nın en iyi mausu bana gore",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "mouse",
+      "bloody",
+      "v3 gun 3"
+    ]
+  },
+  {
+    "id": 60,
+    "text": "tamam güzel ama o kadar abartılacak bir yönü yok.oyuncular da iyi. yani izlenebilir bir film işte..",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 61,
+    "text": "Son zamanlarda izlediğim en iyi grilim filimlerinden di, gercekten başarılı olmuş, filmin sonu keşke böyle bitmeseydi diyebilirsiniz ama unutmayın ki bu film gerçek hayattan alıntıdır...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 62,
+    "text": "vallaha ben bu otelden hiç memnun kalamadım iyi bişi hiç göremedim ne yalan söleyim turistlere daha çok ilgi anlayış sevgi var ama bize yok oğlu yok",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "otel"
+    ]
+  },
+  {
+    "id": 63,
+    "text": "Bununla ilgili blokların bir kısmı Suriye Caddesi kazılarında ortaya çıkarılmıştır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Suriye Caddesi"
+    ]
+  },
+  {
+    "id": 64,
+    "text": "bu kadar kotu oyunculuk bu kadar kotu yonetmenlikte olmazki .........",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 65,
+    "text": "bu fiyata muthis şarj efsane olmuş tasarımda iyi parmak izi çalışması da iyi hız durumunda başarılı kesinlikle alınabilecek telefon",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "telefon"
+    ]
+  },
+  {
+    "id": 66,
+    "text": "kalitesi beklediğimin çok altında bir filmdi birde neden dublajlı diye kendi kendime düşünüyordum izlediktn sonra anladım gerçekten çocuk filmi gibi olmuş. sonu bir kere havada bitti .. bilmiorum boş zmnınız warsa izlenebilir ama kesinlikle bekleneni wermior",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 67,
+    "text": "ürün orjinalinden daha kısa. yağmur sensörünün bulunduğu kısmı tam silmediği için sensör doğru çalışmıyor.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "yağmur sensörü",
+      "silecek"
+    ]
+  },
+  {
+    "id": 68,
+    "text": "Yüksek sesler ve ışık gibi algısal bilgilere sıradışı tepkiler de sıklıkla görülür .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 69,
+    "text": "kamerası hariç puanım 10 üzerinden 10'dur. özellikle oyunlarda donma ve takılma gibi problemleri kesinlikle yaşamazsınız.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "telefon",
+      "kamera"
+    ]
+  },
+  {
+    "id": 70,
+    "text": "urun hizli geldi. fakat ayagim 42 numara ve yorumlara bakinca cok dar felan diyirlardi bende large aldim ama ayagim zor giriyor icine yani ayagimi sokarken daha cok sakatlanacaktim. girdikten sonra sıkı tutuyor o isi yapmiş bari ama bu fiyata normal.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "ayakkabı"
+    ]
+  },
+  {
+    "id": 71,
+    "text": "Bu redoks reaksiyonu platin kaplı platin elektrot yüzeyinde gerçekleşir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "platin elektrot"
+    ]
+  },
+  {
+    "id": 72,
+    "text": "İçinde ülkenin iletişim ve telekomünikasyon tarihi hakkında bir müze de barındırır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "müze"
+    ]
+  },
+  {
+    "id": 73,
+    "text": "boyu 1.60-1.70 arasında olanlar için ideal bir seçim.yanında el pompası olması avantaj..fiyatı kalitesine göre çok uygun..kargom da çok hızlı geldi..hepsiburadaya teşekkürler",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "pilates topu",
+      "el pompası",
+      "hepsiburada"
+    ]
+  },
+  {
+    "id": 74,
+    "text": "Osmanlı İmparatorluğu bu baskıya savaş ilan ederek karşılık verdi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Osmanlı İmparatorluğu"
+    ]
+  },
+  {
+    "id": 75,
+    "text": "Gençlerbirliği takımında kadro dışı bırakılan Engin Baytar sezon sonuna kadar kiralanmıştır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Gençlerbirliği",
+      "Engin Baytar"
+    ]
+  },
+  {
+    "id": 76,
+    "text": "Hacettepe Üniversitesi Ankara Devlet Konservatuvarı Tiyatro Bölümü mezunudur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Hacettepe Üniversitesi",
+      "Ankara Devlet Konservatuvarı"
+    ]
+  },
+  {
+    "id": 77,
+    "text": "Sonraki hafta ise Kardemir Karabükspor maçında asist yaptı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Kardemir Karabükspor"
+    ]
+  },
+  {
+    "id": 78,
+    "text": "arkadaşlar filmi bugün izleme fırsatım oldu.berbat bir film.sahneler birbirinden kopuk ve son derece yavaş ilerleyen bir film.oyunculara aldanıpta güzel olduğunu düşünen arkadaşlar sinema paranızı boşuna vermiş olursunuz.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "sinema",
+      "film"
+    ]
+  },
+  {
+    "id": 79,
+    "text": "Özellikle Edirne ve Kırklareli bu kışları soğuk olan karasal iklimin etki alanı içerisindedir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Edirne",
+      "Kırklareli"
+    ]
+  },
+  {
+    "id": 80,
+    "text": "Kolordu Adli Müşaviri olarak vatani hizmetini yerine getirdi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Kolordu Adli Müşavirliği"
+    ]
+  },
+  {
+    "id": 81,
+    "text": "Dünya Savaşı nedeniyle askere alınarak eğitimine ara verdi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Dünya Savaşı"
+    ]
+  },
+  {
+    "id": 82,
+    "text": "sipariş verdiğimde bugün kargo yazmasına rağmen ertesi gün verildi 4 günde elime geçti. saate söylenecek söz yok gayet güzel",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "saat",
+      "kargo"
+    ]
+  },
+  {
+    "id": 83,
+    "text": "Ancak çok çeşitli sanatçı bu tanımlamaya girdiği için hepsi arasında bağlantı kurmak olası değildir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 84,
+    "text": "tesisatlarda kullanılan yalıtım süngeri.kumaşı ise elinize renk veriyor.kapınız açık renk ise dikkat edin.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "yalıtım süngeri"
+    ]
+  },
+  {
+    "id": 85,
+    "text": "penye evde rahat kullanılırken işte dışarda kullanımı olmaz .daha iyi bir ürün tavsiye ederim",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "penye"
+    ]
+  },
+  {
+    "id": 86,
+    "text": "bu konuda sizlere mail de yazdığım halde halen bir cevap alamadım. hepsiburadanın çok eski bir müşterisi olarak bu konunun düzeltilmesini istiyorum.saygılar...",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "hepsiburada"
+    ]
+  },
+  {
+    "id": 87,
+    "text": "Korku filmi yapabiliyormuyuz ki bide onlarla dalga geçiyoruz :S",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "korku filmi"
+    ]
+  },
+  {
+    "id": 88,
+    "text": "karayip korsanları serisi güzel bir film filmdeki üçlüler çok güzel oynuyorlar her zamanki gibi bir numaralı film iyi izleyici sahip bir film türkiyede gişe rekoru kırıyor 10/10",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "Karayip Korsanları",
+      "Türkiye"
+    ]
+  },
+  {
+    "id": 89,
+    "text": "Blokların karşısında ise çeşitli zamanlarda yaptırılmış apartmanlar bulunur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "apartman"
+    ]
+  },
+  {
+    "id": 90,
+    "text": "Beklentilerimin çok çok altında. Sıkıldım resmen. Tavsiye etmiyorum izlemeyin.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 91,
+    "text": "valla ben geçen yaz gittim bide bu gece gidicem haftalığına gayet güzeel bi otel animasyonları falan çok güzeldi kötü diyenlere hiçbir şekilde hak vermiyorum",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "otel"
+    ]
+  },
+  {
+    "id": 92,
+    "text": "urun kullanıslı fakat ılk pısırdıgınde plastık kokusu var hıc hoslanmadım celık tercıh edılmelı.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "tencere",
+      "plastik"
+    ]
+  },
+  {
+    "id": 93,
+    "text": "Özellikle palmiye ağaçlarının tepesinde yaşarlar ve ağaçtan beslenirler .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "palmiye ağacı"
+    ]
+  },
+  {
+    "id": 94,
+    "text": "İşgal kuvvetleri de Hristiyan ahalinin zarar görebileceği düşüncesiyle gelişmelerden uzak dururlar .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "Hristiyan"
+    ]
+  },
+  {
+    "id": 95,
+    "text": "Bu kadar berbat bir film daha hatırlamıyorum.Ne senaryo belli ne de yapılmak istenen olay.Sadistçe birşeyler yapılıyor başka da birşey yok.10 üzerinden keşke - puan verebilseydim.10/1",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "film"
+    ]
+  },
+  {
+    "id": 96,
+    "text": "arkadaşlar malesef yeni ıslak mendil eskisine göre çok kötü sayı düşmüş kalite düşmüş hep can bebe ıslak mendil alıyordum birdaha almam.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "ıslak mendil",
+      "can bebe"
+    ]
+  },
+  {
+    "id": 97,
+    "text": "i̇kinci defa alıyorum 2 sene sonra, ses kalitesi kötü, kullanamayacam.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "kulaklık"
+    ]
+  },
+  {
+    "id": 98,
+    "text": "ürün gerçekten çok kullanışlı ,özellikle su damlatmaması tüm anneler için müthiş bir özellik.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": [
+      "biberon"
+    ]
+  },
+  {
+    "id": 99,
+    "text": "Ayrıca bir okul korosunda ve kilise korosunda şarkı söyledi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": [
+      "okul korosu",
+      "kilise korosu"
+    ]
+  },
+  {
+    "id": 100,
+    "text": "2 tane iri ırk köpeğim var. beslenmeleri maddi açıdan artık sorun olmaya başladığı için bu ürünü tercih ettim. alıştıkları mamadan sonra buna çok sıcak bakmadılar. bende çareyi mamaları harmanlamakta buldum karıştırıp öyle veriyorum. i̇çeriği güzel gibi ama bakalım??",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": [
+      "köpek maması"
+    ]
+  },
+  {
+    "id": 101,
+    "text": "bence film kötüydü. filmin finali de gayet saçmaydı. 2 verdim..",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 102,
+    "text": "Aşırı derecede şirin bir film,tatlı bir komedi ve duygusallık barındırıyor içinde...Güzel bir senaryo ve mutlu son...:)",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 103,
+    "text": "1950 lerin en baba filmi diyebilirim henry fonda şahane bir performans sergiliyor ve hayata dair çok güzel dersler veriyor. kesinlikle izleyin",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 104,
+    "text": "süpürge iyi ama hortumu başlığı tekerlekleri bir şey yaramıyor çekiş gücü iyi deposu 5 litre iyi ancak aldığım hafta ön tekerlekler kırıldı hortum yırtıldı",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 105,
+    "text": "Bazı eski ve yabancı kayıtlarda hala Mudanya olarak geçmektedir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 106,
+    "text": "dolap ve diğer gözler iyi depolama alanı sağlıyor. sadece işlevsel dolapları için (yemek odası konsolu niyetine) alınabilir.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 107,
+    "text": "Nazi ideolojisi ve partisinin birçok destekçisi bu düşünceye destek verdi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 108,
+    "text": "Beklediğimi bulamadım birkaçının oyunculuğu iyi ama diğerleri için aynı şeyi söyleyemeceğim.vakti bol arkadaşlarıma tavsiye ederim. Saygılarımla..",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 109,
+    "text": "ürünüm vaktinde geldi ve gerçekten herşeyiyle mükemmel. i̇lginiz ve titizliğiniz için teşekkürler.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 110,
+    "text": "ben urunu kurdum ama ustune çıktığımda sağa sola oynadığını gördüm sabır durmuyor yanı bende ayaklarından hıltı ıle delık açıp zemine vıdaladım sımdı sağlam oldu öyle yapılmazsa kullanamazsınız",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 111,
+    "text": "aşiri derecede dayanilmayacak şeki̇lde yanma yapiyor acayi̇p karanfi̇l kokuyor heryerden kokusu duyuluyor i̇şede yaramiyor başka ürünler almanizi öneri̇ri̇m",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 112,
+    "text": "son aldığım bezler sızdırıyor,eskiden aldıklarım böyle değildi.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 113,
+    "text": "ice age'i izlemeden önce pek farklı oacağını sanmıyordum.Fakat çok farklı olduğunu anladım.Çİzim şekli ve kalitesi bana eski birkaç çigi filmin kurgusunu hatırlattı.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 114,
+    "text": "ürün gerçekten çok iyi soğutuyor. kaliteli bir ürün. ofisler için mükemmel diyebilirim.ben bir haftadır kullanıyorum çok memnun kaldım.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 115,
+    "text": "valla bloodrayne 2 deki gibi bi fıstık koymazlarsa bu film tutmaz bence.oyunu sevdirende oydu zaten.Çizimdeki bile gerçeğinden daha güzel görünüyo.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 116,
+    "text": "Herhangi bir video klibi olmayan şarkı bir önceki single \"Ten Paciencia\"nın başarısını geçmiştir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 117,
+    "text": "serinin en kötü filmi, paranıza yazık, çekilecek yeni film serileri için zemin filmi çekmişler resmen, harry potter must die diyorum",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 118,
+    "text": "kız arkadasımın dogum günü yaklatıgı ıcın sparıs werdım.alan arkadasların yorumlarına göre sparıs werdım desem daha dogru olur.gercekten cok guzel zaarıf bır urune benzıyor.insallah kız arkdasım begenır. hepsi buradayada cok tesekkur etmek gerek herseyı bulşabılıyorsunuz ve uygun fıyata.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 119,
+    "text": "Herkes embesil, işe yaramaz gözüyle bakmasına rağmen Forrest Gump ne kadar da güzel işler başarıyor değil mi? Dünyada saflığın, temizliğin, iyi niyetin herşeyin üstünde bir değer olduğunu gösteren çok güzel bir film ... 10/10forrest gump",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 120,
+    "text": "Şimdiye kadar yalnızca kertenkele üzerinde bulunmuş tek bir erkek örneği var .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 121,
+    "text": "ürünün isminde boyutları yazmıyor. ürün açıklamalarında boyutları yazıyor ancak dikkat çekici değil. pek çok pilates hareketi için uygun değil.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 122,
+    "text": "Çok iyi bir Görsel Şölen Büyük ekran LCD'nin karşısına kurulun ve gözlerinize bu zevki yaşatın. Kurgu Çok iyi Hareketli bir son Bu filmi beğenenler Parlayan Hançerleri kaçırmasın",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 123,
+    "text": "Sanatçı alzheimer hastalığı nedeniyle yaşamını yitirmiştir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 124,
+    "text": "Adam film boyunca koştu.Oğluyla iyi bir ikili olmuşlar.Kendi adıma beğendim.Azim önemliymiş.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 125,
+    "text": "herşeyden önce bu ürünü indirimde aldım bu fiyata mükemmel diyebileceğim bir makine almış oldum. i̇ndirimli olmasa bile kesinlikle tavsiye ederim.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 126,
+    "text": "film çok doğal geçiyodu, zaten oynayanların neredeyse hiçbirinin eğitimi yok. ben pek beğenmedim, film gayet sıradan ilerliyodu.Belki de sürekli izlediğim filmlerden çok farklı olduğu için beğenmedim ama yinede o yöre halkının doğallıkları ayrı bi sevimlilik katmış filme.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 127,
+    "text": "Kuhn partide sol bacağını kırar ve o andan itibaren felç olur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 128,
+    "text": "üründen fazla birşey beklemeyin aparatları çok zor takılıyor heran kırılabilir 3 kademe sıcaklık ayarı var ama 3. kademede çalıştırmayın makinadan plastik kokusu geliyor.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 129,
+    "text": "kırışıklıkları açması, buhar gücü çok iyi. fiyatıda gayet uygun. tek sıkıntı yaşadığım konu ayar düğmesi.. ütü sırasında elim sürekli temas edip ( ütü sapının altı)sıcaklık ayarını değiştiriyor.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 130,
+    "text": "Günümüzde bölge iş ve konut kullanımı amacıyla yeniden inşa edildi .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 131,
+    "text": "sipariş verdikten 2 gün sonra elimize ulaştı ürün kargocu arkdaslarda ilgili davrandılar üründe çok gürültülü çalısmıyor sessizde degil ama kısa programda bile güzel yıkama yapıyor bu paraya hakkaten sağlam bi ürün umarım uzun yıllar kullanabiliriz arızasız bi şekilde ..",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 132,
+    "text": "Anlaşmanın yapılmasının ardından geçen yıllar boyunca çok az şey değişti .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 133,
+    "text": "Henüz tartışmalı olduğu günlerde dahi atom teorisinin en önemli savunucuları arasında yer almıştır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 134,
+    "text": "ürün gerçekten çok güzel.bulaşıklar gıcır gıcır resmen :))) buradaki fiyatı da kaçırılmayacak gerçekten.. arkadaşlarla topluca almayı düşünyoruz.üstelik kargo da ücretsiz süpperr",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 135,
+    "text": "izlemek zaman kaybı ,ben beyenmedim;hiçde sürükleyici bir yanı yok",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 136,
+    "text": "derine derine derine artık klişe bir psikopat terimi oldu bizde. birine bir fenalık edeceğim vakit bu lafı kullanacağım. film mi? izlemesende olur. herkesin göğe yükseltmesine anlam vermek mümkün değil.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 137,
+    "text": "mahsun kırmızıgül:bu ülke,bu insanlar,bu devlet bu millet hakkında ne düşünüyorsan erkek gibi çık ortaya konuş. sinema kılıfının arkasına saklanmışsın vur abalıya diyosun.hiç kendinize çuvaldızı batırdığınız yok. senin fikrinin ve maksadının ne oldugunu herkes biliyor merak etme...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 138,
+    "text": "İki ülke işbirliği içinde hem endüstriyel hem de silah olarak kullanılmak üzere kimyasallar geliştirdiler .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 139,
+    "text": "Ayrıca oyuncu bir elde dönen tüm kupaları ve maça kızını alırsa kafa atmış olur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 140,
+    "text": "Gora nın ilham kaynağı olan filim.Mükemmel bir komedi filmi.Türklerin saf ve temiz yürekli olan o zamanki bozulmamış halk insanı tiplemesiyle gönüllerimize kazınmış bir adam.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 141,
+    "text": "yıldızlı bir otele göre iyi bir otel gerçekten çok iyi çalışan personeller durmaksızın ayakta ve çok hızlı çalışan personeller inanın herşey bir yana sadece personeller sayesinde yüzümüz gülüyordu",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 142,
+    "text": "Görevden ayrıldıktan iki gün sonra sivil nüfus tarafından karşılandığı Nevruz kutlamalarına katıldı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 143,
+    "text": "bu kadar güzel olabileceğini tahmin bile edemezdik. kızlarım oyuncağı paylaşamıyor bile.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 144,
+    "text": "Bilgi artışıyla birlikte bilgisayarda bilgi depolama ve bilgiye erişim konularında yeni yöntemlere ihtiyaç duyulmuştur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 145,
+    "text": "Memnun kaldık tavsiye ederim. Odasında yiyecek içeceklerinden.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 146,
+    "text": "ürün gayet güzel yalnız bir tık daha ince olsa cok hos olurdu",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 147,
+    "text": "İbrahim Şahin ayrıca Türk Hava Kurumu Üniversitesi Mütevelli Heyet üyesidir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 148,
+    "text": "ürün sandığımdan daha da kaliteli çıktı teşekkürler hepsiburada :))",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 149,
+    "text": "yıllardır traş bıçakları ve traş makinaları ile hep sorun yaşıyordum, hep tahriş edip cildime zarar veriyordu. gillete fusion proglide ile mükemmel ötesi bir traş",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 150,
+    "text": "Türk Felsefe Derneği Yönetim Kurulu Üyeliği görevini yürüttü .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 151,
+    "text": "Alan köylülerinin hayvanlarına musallat olan Tarkan ve Kurt bir gün yakalanır ve tutsak edilirler .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 152,
+    "text": "dünyanın gelmiş geçmiş en iyi gerilimi bu filminde kötü olmasını beklemiyorum bu filmin senaristini tebrik etmek lazım böyle işkence planları tasarlamak herkesin harcı olmasa gerek...",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 153,
+    "text": "şarj cihazını ilk gün doldurdum ikinci gün telefonu takınca gitti yani çalışmıyor.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 154,
+    "text": "İngiltere ve Fransa devletleriyle çatışma yerine denge politikası izlemiştir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 155,
+    "text": "Bunun yanı sıra bu kelimenin roman şeklinde kullanıldığı da görülmüştür .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 156,
+    "text": "Bu pistin kenarlarında seyircilerin oturduğu basamaklar bulunuyordu .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 157,
+    "text": "Doğa olarak ederim ama yemek olarak edemem. Bu yüzden kararsızım.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 158,
+    "text": "oysaki bu ürün, saçı çok iyi kurutsa da aşırı elektriklendiriyor. bana iyi gelmedi kısaca. arkasındaki havalandırma kısmının saçları kapıp yakması da çok büyük bir eksisi bana kalırsa. ben pek memnun kalmadım.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 159,
+    "text": "İrlanda takımı turnuvada oynadığı ilk üç maçta ağır yenilgiler aldı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 160,
+    "text": "eline kamerayı alan film çekiyor sözü bu film için söylenmiş sanki",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 161,
+    "text": "Ben de hiç beğenmedim fimi . Sanki amatör oyucularla çekilmiş bi film gibi. Özellikle bazı sahneleri aşırı saçmaydı.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 162,
+    "text": "resimlerine bakıp yanılgıya düşmeyin kim nederse desin montaj akıl işi değil montajı ile ilgili en ufak açıklayıcı bir bilgiye sahip değil tamamen el becerinize kalmış bir şey.sonrası dahada kötü ürün ayakta zor duruyor dokunsan bitti kesinlikle tavsiye etmiyorum",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 163,
+    "text": "Kum torbası çok ağır olmadığı için çok sayıda kullanılarak istenilen şekilde tahkimat oluşturulabilir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 164,
+    "text": "Besinlerin içerdiği mineraller asidik ya da alkali olmalarını sağlar .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 165,
+    "text": "mutlaka ve mutlaka izleyin.. yabancı film dalında tek oscar adayım..:) anlatım görüntüler çok başarılı..özellikle bu yıl ki ortalama filmler ve sıradan konular düşünülürse onların arasından büyük fark atarak sıyrılan bir film..",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 166,
+    "text": "Salonun açıldığı ilk dönemlerde \"El Hami\" adlı bir İstanbullu müzisyenin eserleri icra edilir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 167,
+    "text": "2 adet aldım ikiside bir hafta içinde şarj yapmamaya başladı. kaliteli gibi görünsede başarısız.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 168,
+    "text": "Şehri imar edip yeni binalarla süslemek için büyük harcamalar yaptı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 169,
+    "text": "Hayatimda iskence cekerek izledigim ve zorla guldugum ender filmlerden biriydi cok basit espriler vardi,hic sevmedim..",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 170,
+    "text": "okuduğum en kötü kitap ve izlediğim en kötü film...açıkcası bir kitap bu kadar mükemmel aktarılabilirdi beyaz perdeye her ne kadar eksik olsa bile...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 171,
+    "text": "Karşılaştırmalı metot dilleri karşılaştırır ve ses kurallarını uygulayarak ortak bir ata dili oluşturur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 172,
+    "text": "Aynı zamanda alfa ışınımı sonucu yine az miktarda helyum içerir .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 173,
+    "text": "çizgi filmini bile kaçırmazdım.hey gidi günler.Keaton böyle bir rolü gerçekten iyi canlandırmış.harika bir film.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 174,
+    "text": "bencede harika olmuş testerenin 4. serisi.olaylar inanılmaz yerlere götürüyor izleyenleri.jigsaw ise şeytanın bile aklına gelmeyen yöntemlerle insanları hayatları pahasına acı çektirerek imtihan ediyor.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 175,
+    "text": "paranızin karşılığını alıyorsunuz. verdiğiniz paraya deyiyir.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 176,
+    "text": "çok yüzeysel. bu kadar çok tesadüf de sıkıyor. 2004 değil de 90 yapımı gibi.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 177,
+    "text": "Hayatımda bunun gibi bir film daha görmedim Tuba ve Hayko oynuyor diye gittiysemde zerre kadar zevk almadım.Paranızı boşa harcamayın.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 178,
+    "text": "Gazetenin bünyesine giren yazarlar arasında ünlü gazeteci Ahmet Rasim de yer aldı .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 179,
+    "text": "asdece şunu diorum mükkemmel bir son ve mükemmel bir spacey:D",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 180,
+    "text": "marka harika üründe harika sata zaten harika bende hemen 3 adet sipariş verdim",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 181,
+    "text": "Büyük usta Pacino ve genç yetenekler bir araya gelince işte böyle harika bir proje ortaya çıkmış. Filmde Pacino'nun oyunculuğu ve replikler hafızalara kazınıyor.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 182,
+    "text": "Köyün Cumhuriyet tarihi hakkında genel bilgiler resmi olarak bulunmaktadır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 183,
+    "text": "her şey olması gerektiği gibiydi. hızlı kargo ve düzgün ambalaj.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 184,
+    "text": "osman sınavın filmleri gerçekten güzeldir ve bu filmin güzelliğide bambaşka",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 185,
+    "text": "hepsiburadadan 2. defa telefon aldım siparişimi sorunsuz getiriyor, lg g4dü çok araştırıp aldım performansından memnunum, tek iyi olmayan yanı ekranın camı corning gorilla glass 3 olmasına rağmen ekranda jelatini kırılmaz jelatin yaptırırken üstünde gelen jelatin çıkartırken bant izleri kaldı, hiç çıkmıyor.",
+    "category": "urun",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 186,
+    "text": "Gerçekten yeni neslin oturup tekrar tekrar seyretmesi gerektiği mükemmel film.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 187,
+    "text": "Araştırmaya bakılarak öğrenciye kağıt veya proje hakkında bir dizi soru sorulur .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 188,
+    "text": "arkadaslar ürünü almadan önce 3 4 siteye baktım en uygun fiyat h.b da buldum ztn en güvenilir site h.b sayısız alışveriş yaptım sagolsun lar ilgili alakali sorun hmn çözülüyor kulaklık 10 numara hersey içinde çıkıyo ses kalitesi çok iyi ben memnunum muzikte dinleniyo tavsiye ederim",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 189,
+    "text": "Bu familyaya bağlı türler çoğunlukla tropikal bölgelerde dağılmıştır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 190,
+    "text": "Sıkıcı kötü çekilmiş anlamsız bir film. Filme bir türlü adapte olamıyorsunuz film kopuk kopuk anlayacağınız. Belki karakterlere daha fazla zaman ayırıp tanıma fırsatı verselerdi bir şeye benzeyebilirdi.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 191,
+    "text": "Hiç beğenmedim tipik bir amerikalı kahraman filmi.Filmdeki gibi o insanları bu hale getiren amerika ama kurtarıcıymış gibi şirin görünüyorlar.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 192,
+    "text": "iki yıldır kullanıyorum. çok memnunum. başta arkadaşlar dalga geçti ama ben araştırarak almıştım. lastikler hem beni tatmin etti hem onları susturdu.",
+    "category": "urun",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 193,
+    "text": "Çoğu ülkelerde belediye başkanları seçimle görev başına gelirler .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 194,
+    "text": "çocuk filmi de olsa gayet eğlenceliydi.ben stiller olmasa çok vasat bir film olabilirdi.",
+    "category": "sinema",
+    "sentiment": "olumlu",
+    "gold_entities": []
+  },
+  {
+    "id": 195,
+    "text": "film çok sıkıcı olmuş hiç beğenmedim uyumak isteyenler buyursun.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 196,
+    "text": "ben izlerken çok büyük hayal kırıklığına uğradım.bence izlenmesi kazaman kaybı olan filimlerden biri.aksiyondan eser bile yok filimde.belki sonunda verilen mesaj güzel ama genede bence 2 saatinize yazık daha iyi filimler izlenebilinir...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 197,
+    "text": "ilk defa bir filme yorum yazıyorum, çünkü burdaki yorumlara güvenip gittim ve 8üstü puan nasıl almış inanamadım... oldukça sıkıcı bir film, kötü film demiyorum ama resmen sıkıcı! &quot;bu muydu&quot; dedirten bir son, önermiyorum...",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 198,
+    "text": "Ağustos ayı içinde Kuzey Afrika’daki Alman ve İtalyan birlikleri kayda değer takviye almışlardır .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  },
+  {
+    "id": 199,
+    "text": "Bu serinin ilk filminin tadını hiç birinde bulamadım.Son Rambo ise tam bir facia olmuş.Konu ve final vasat seviyede.Filmin yapımcıları artık soğuk savaş yıllarında yaşamadığımızın farkında olmasa gerek.Hiç çekilmese daha iyiydi.Puanım ilk filmin hatrına 4/10.",
+    "category": "sinema",
+    "sentiment": "olumsuz",
+    "gold_entities": []
+  },
+  {
+    "id": 200,
+    "text": "Ayrıca Müslümanların İberya fethinde önemli bir aracı oldular .",
+    "category": "ansiklopedi",
+    "sentiment": "notr",
+    "gold_entities": []
+  }
+]
